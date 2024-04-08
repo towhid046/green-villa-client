@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 const Register = () => {
   return (
     <div>
-      <div className="hero md:min-h-screen bg-[#f3f3f3] container-fluid pt-12 pb-8">
+      <div className="hero md:min-h-screen container-fluid pt-12 pb-8">
         <div className="w-full px-4">
-          <div className="max-w-xl bg-base-100 mx-auto md:p-12 py-8 px-6">
+          <div className="max-w-xl bg-base-100 border mx-auto md:p-12 py-8 px-6">
             <h1 className="text-2xl font-bold text-center mb-8">
               Register your account
             </h1>

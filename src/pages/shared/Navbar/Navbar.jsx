@@ -37,7 +37,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52  gap-3"
+              className="text-base  menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52  gap-3"
             >
               {links}
               <li>
@@ -47,18 +47,21 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <Link to="/" className="btn btn-ghost font-bold md:text-3xl text-2xl">
-            LuxeDwell
+          <Link to="/" className="
+          btn btn-ghost font-bold md:text-3xl text-2xl
+          bg-gradient-to-r from-green-600 to-indigo-300  text-transparent bg-clip-text
+          ">
+            GreenValley
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 gap-3">{links}</ul>
+          <ul className="text-base menu menu-horizontal px-1 gap-3">{links}</ul>
         </div>
         <div className="navbar-end gap-3 mr-2">
           <Link to={"/register"} className="btn btn-info  md:flex hidden">
             Sign Up
           </Link>
-          <Link to={"/login"} className="btn btn-primary">
+          <Link to={"/login"} className="btn md:btn  btn-primary btn-sm">
             Sign In
           </Link>
         </div>
