@@ -1,9 +1,32 @@
 import { Link } from "react-router-dom";
 import googleLogo from "../../../src/assets/logos/google-logo.png";
 import githubLogo from "../../../src/assets/logos/github-logo.png";
+import { Helmet } from "react-helmet-async";
+import { useContext } from "react";
+import { UserContext } from "../../providers/ContextProvider/ContextProvider";
+
 const Login = () => {
+  const { createUser } = useContext(UserContext);
+
+  const handelLoginForm = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    createUser(email, password)
+      .then((res) => {
+        console.log(res.user);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+
   return (
     <div>
+      <Helmet>
+        <title>Green Villa | Login</title>
+      </Helmet>
       <div className="hero md:min-h-screen container-fluid pt-12 pb-8">
         <div className="w-full px-4">
           <div className="max-w-xl border bg-base-100 mx-auto md:p-12 py-8 px-6">
@@ -11,13 +34,14 @@ const Login = () => {
               Login your account
             </h1>
             <hr />
-            <form className="mt-5">
+            <form onSubmit={handelLoginForm} className="mt-5">
               <div>
                 <label className="label">
                   <strong className="label-text">Email address</strong>
                 </label>
                 <input
                   type="email"
+                  name="email"
                   placeholder="Enter your email"
                   className="focus:outline-none input w-full rounded-none outline-none bg-[#f3f3f3]"
                   required
@@ -29,6 +53,7 @@ const Login = () => {
                 </label>
                 <input
                   type="password"
+                  name="password"
                   placeholder="Password"
                   className="focus:outline-none w-full input rounded-none outline-none bg-[#f3f3f3]"
                   required

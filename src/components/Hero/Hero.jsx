@@ -12,7 +12,6 @@ const Hero = () => {
     const loadData = async () => {
       const res = await fetch("sliders.json");
       const data = await res.json();
-      console.log(data);
       setSliders(data);
     };
     loadData();
@@ -20,14 +19,15 @@ const Hero = () => {
 
   return (
     <section
-      className="bg-cover bg-center bg-no-repeat "
+      className="bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${heroBgImg})` }}
     >
       <div className="backdrop-brightness-50">
         <div className="flex flex-col lg:flex-row lg:items-start justify-between container mx-auto px-4 md:py-12 py-7 xl:gap-56 lg:gap-40 gap-10 ">
           <div className=" space-y-6 text-center lg:text-left text-gray-100">
             <h1 className="md:text-5xl max-w-lg text-3xl font-bold bg-gradient-to-r from-blue-200 via-blue-100 to-green-400 inline-block text-transparent bg-clip-text">
-              Welcome to Green Valley: Where Serenity Meets Adventure!
+              Welcome to <span className="text-green-300">Green</span> Villa:
+              Where Serenity Meets Adventure!
             </h1>
             <p className="text-lg">
               Imagine waking up to the gentle rustle of leaves and the sweet
@@ -41,12 +41,12 @@ const Hero = () => {
             </button>
           </div>
 
-          <div className="relative lg:right-24 text-center">
+          <div className="relative lg:right-28 text-center">
             <Swiper
               effect={"cards"}
               grabCursor={true}
               modules={[EffectCards]}
-              className="md:max-w-96 max-w-52 h-72  md:h-[75vh]"
+              className="md:max-w-96 max-w-52 h-72 md:h-[75vh]"
             >
               {sliders &&
                 sliders.map((slide) => (

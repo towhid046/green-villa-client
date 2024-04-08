@@ -3,3 +3,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.menu >li .active{
+    transition: .4s;
+    border:1px solid #93B1E6;
+    background-color: white !important;
+    color: #403f3f !important;
+    font-weight: 600;
+}

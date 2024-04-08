@@ -1,5 +1,26 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { UserContext } from "../../../providers/ContextProvider/ContextProvider";
+import { FaRegUserCircle } from "react-icons/fa";
+import { toast } from 'react-toastify';
+
 const Navbar = () => {
+  const { user, LogOutUser } = useContext(UserContext);
+
+  const handelLogOutUser = () => {
+    LogOutUser()
+      .then((res) => {
+        toast.success(`Log Out success`, {
+          position: "top-center",
+          autoClose: 3000,
+          })
+        console.log(res.user);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+
   const links = (
     <>
       <li>
@@ -47,23 +68,42 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <Link to="/" className="
+          <Link
+            to="/"
+            className="
           btn btn-ghost font-bold md:text-3xl text-2xl
           bg-gradient-to-r from-green-600 to-indigo-300  text-transparent bg-clip-text
-          ">
-            GreenValley
+          "
+          >
+            GreenVilla
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="text-base menu menu-horizontal px-1 gap-3">{links}</ul>
         </div>
         <div className="navbar-end gap-3 mr-2">
-          <Link to={"/register"} className="btn btn-info  md:flex hidden">
-            Sign Up
-          </Link>
-          <Link to={"/login"} className="btn md:btn  btn-primary btn-sm">
-            Sign In
-          </Link>
+          {user ? (
+            <>
+              <span className="text-3xl cursor-pointer">
+                <FaRegUserCircle />
+              </span>
+              <button
+                onClick={handelLogOutUser}
+                className="btn md:btn  btn-primary btn-sm"
+              >
+                Log Out
+              </button>
+            </>
+          ) : (
+            <>
+              <Link to={"/register"} className="btn btn-info  md:flex hidden">
+                Sign Up
+              </Link>
+              <Link to={"/login"} className="btn md:btn  btn-primary btn-sm">
+                Sign In
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </nav>
