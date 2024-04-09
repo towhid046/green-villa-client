@@ -1,14 +1,19 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../providers/ContextProvider/ContextProvider";
 import { toast } from "react-toastify";
 import { LuEye, LuEyeOff } from "react-icons/lu";
+import { scrollToTop } from "../../utility/scrollToTop";
 
 const Register = () => {
   const { createUser, updateUserProfile, setLoading } = useContext(UserContext);
   const [isShowPassword, setIsShowPassword] = useState(false);
   const [passwordError, setPasswordError] = useState(null);
+
+  useEffect(() => {
+    scrollToTop();
+  }, []);
 
   const handelRegisterForm = (e) => {
     e.preventDefault();

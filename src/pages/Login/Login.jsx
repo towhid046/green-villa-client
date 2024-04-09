@@ -2,15 +2,20 @@ import { Link } from "react-router-dom";
 import googleLogo from "../../../src/assets/logos/google-logo.png";
 import githubLogo from "../../../src/assets/logos/github-logo.png";
 import { Helmet } from "react-helmet-async";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../providers/ContextProvider/ContextProvider";
 import { toast } from "react-toastify";
 import { LuEye, LuEyeOff } from "react-icons/lu";
+import { scrollToTop } from "../../utility/scrollToTop";
 
 const Login = () => {
   const { loginUser, logInWithGoogle, logInWithGithub, setLoading } =
     useContext(UserContext);
   const [isShowPassword, setIsShowPassword] = useState(false);
+
+  useEffect(() => {
+    scrollToTop();
+  }, []);
 
   const handelLoginForm = (e) => {
     e.preventDefault();

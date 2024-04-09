@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { UserContext } from "../../../providers/ContextProvider/ContextProvider";
-import { FaRegUserCircle } from "react-icons/fa";
 import { toast } from "react-toastify";
 
 const Navbar = () => {
@@ -30,7 +29,7 @@ const Navbar = () => {
         <NavLink to="/update-profile">Update Profile</NavLink>
       </li>
       <li>
-        <NavLink to="/user-profile">User Profile</NavLink>
+        <NavLink to="/about-us">About Us</NavLink>
       </li>
     </>
   );
@@ -83,7 +82,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-end gap-3 mr-2">
           {loading ? (
-           <span className="loading loading-dots loading-md"></span>
+            <span className="loading loading-dots loading-md"></span>
           ) : (
             <>
               {user ? (
@@ -93,11 +92,12 @@ const Navbar = () => {
                     className="text-3xl cursor-pointer"
                   >
                     {user.photoURL && (
-                      <img
+                    <Link to={'/user-profile'}>
+                    <img
                         className="md:w-10 w-8 rounded-full"
                         src={user.photoURL}
                         alt="User"
-                      />
+                      /></Link>
                     )}
                   </span>
                   <button

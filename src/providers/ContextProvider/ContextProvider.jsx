@@ -7,7 +7,11 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
-import { auth, githubProvider, googleProvider } from "../../firebase/firebase.config";
+import {
+  auth,
+  githubProvider,
+  googleProvider,
+} from "../../firebase/firebase.config";
 import PropTypes from "prop-types";
 
 export const UserContext = createContext(null);
@@ -15,6 +19,7 @@ export const UserContext = createContext(null);
 const ContextProvider = ({ children }) => {
   const [user, setUser] = useState();
   const [loading, setLoading] = useState(true);
+  const [estates, setEstates] = useState([]);
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -47,12 +52,23 @@ const ContextProvider = ({ children }) => {
     });
   };
 
+  // Truck the current user status:
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
     });
     return () => unSubscribe();
+  }, []);
+
+  // load estates data:
+  useEffect(() => {
+    const loadData = async () => {
+      const res = await fetch("estates.json");
+      const data = await res.json();
+      setEstates(data);
+    };
+    loadData();
   }, []);
 
   const userInfo = {
@@ -65,6 +81,7 @@ const ContextProvider = ({ children }) => {
     updateUserProfile,
     loading,
     setLoading,
+    estates,
   };
 
   return (
