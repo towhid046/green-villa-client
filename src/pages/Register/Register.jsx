@@ -1,7 +1,83 @@
 import { Link } from "react-router-dom";
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from "react-helmet-async";
+import { useContext, useState } from "react";
+import { UserContext } from "../../providers/ContextProvider/ContextProvider";
+import { toast } from "react-toastify";
+import { LuEye, LuEyeOff } from "react-icons/lu";
 
 const Register = () => {
+  const { createUser, updateUserProfile, setLoading } = useContext(UserContext);
+  const [isShowPassword, setIsShowPassword] = useState(false);
+  const [passwordError, setPasswordError] = useState(null);
+
+  const handelRegisterForm = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    const userName = e.target.name.value;
+    const imgUrl = e.target.imgurl.value;
+    setPasswordError(null);
+
+    if (password.length < 6) {
+      setPasswordError("Password must be 6 character");
+      return;
+    }
+
+    if (!/[A-Z]/.test(password)) {
+      setPasswordError("Password must be an Uppercase latter");
+      return;
+    }
+
+    if (!/[a-z]/.test(password)) {
+      setPasswordError("Password must be a lowercase latter");
+      return;
+    }
+
+    createUser(email, password)
+      .then((res) => {
+        toast.success(`Register success!`, {
+          position: "top-right",
+          autoClose: 3000,
+          theme: "dark",
+        });
+
+        updateUserProfile(userName, imgUrl)
+          .then((result) => {
+            setLoading(false)
+          })
+          .catch((error) => console.error(error));
+        e.target.reset();
+      })
+      .catch((err) => {
+        console.error(err);
+        toast.error("This email already registered");
+      });
+  };
+
+  const handelShowPassword = () => {
+    setIsShowPassword(!isShowPassword);
+  };
+
+  const handelPasswordOnChange = (e) => {
+    const password = e.target.value;
+    setPasswordError(null);
+
+    if (password.length < 6) {
+      setPasswordError("Password must be 6 character");
+      return;
+    }
+
+    if (!/[A-Z]/.test(password)) {
+      setPasswordError("Password must be an Uppercase latter");
+      return;
+    }
+
+    if (!/[a-z]/.test(password)) {
+      setPasswordError("Password must be a lowercase latter");
+      return;
+    }
+  };
+
   return (
     <div>
       <Helmet>
@@ -14,13 +90,14 @@ const Register = () => {
               Register your account
             </h1>
             <hr />
-            <form className="mt-5">
+            <form onSubmit={handelRegisterForm} className="mt-5">
               <div>
                 <label className="label">
                   <strong className="label-text">Your Name</strong>
                 </label>
                 <input
                   type="text"
+                  name="name"
                   placeholder="Enter your name"
                   className="focus:outline-none input w-full rounded-none outline-none bg-[#f3f3f3]"
                   required
@@ -32,6 +109,7 @@ const Register = () => {
                 </label>
                 <input
                   type="text"
+                  name="imgurl"
                   placeholder="Enter your photo url"
                   className="focus:outline-none input w-full rounded-none outline-none bg-[#f3f3f3]"
                   required
@@ -43,34 +121,58 @@ const Register = () => {
                 </label>
                 <input
                   type="email"
+                  name="email"
                   placeholder="Enter your email"
                   className="focus:outline-none input w-full rounded-none outline-none bg-[#f3f3f3]"
                   required
                 />
               </div>
-              <div>
+              <div className="relative">
                 <label className="label">
                   <strong className="label-text">Password</strong>
                 </label>
                 <input
-                  type="password"
+                  onChange={handelPasswordOnChange}
+                  type={isShowPassword ? "text" : "password"}
+                  name="password"
                   placeholder="Password"
                   className="focus:outline-none w-full input rounded-none outline-none bg-[#f3f3f3]"
                   required
                 />
+
+                {/* password show eye off-on */}
+                <div className="absolute right-3 bottom-4">
+                  {isShowPassword ? (
+                    <span
+                      className="cursor-pointer"
+                      onClick={handelShowPassword}
+                    >
+                      <LuEye />
+                    </span>
+                  ) : (
+                    <span
+                      className="cursor-pointer"
+                      onClick={handelShowPassword}
+                    >
+                      <LuEyeOff />
+                    </span>
+                  )}
+                </div>
               </div>
+              <small className="text-red-600">{passwordError}</small>
               <div className="flex items-center gap-1 mt-6">
                 <input
                   type="checkbox"
                   id="terms-contition"
                   className="checkbox checkbox-sm rounded"
+                  required
                 />
                 <label htmlFor="terms-contition" className="cursor-pointer">
                   <span>Accept Term & Conditions</span>
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn w-full rounded-none hover:bg-black text-white bg-[#403f3f]">
+                <button className="btn w-full rounded-none hover:bg-black text-white bg-[#2B3440]">
                   Register
                 </button>
               </div>

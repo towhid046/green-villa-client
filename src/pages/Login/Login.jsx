@@ -2,20 +2,70 @@ import { Link } from "react-router-dom";
 import googleLogo from "../../../src/assets/logos/google-logo.png";
 import githubLogo from "../../../src/assets/logos/github-logo.png";
 import { Helmet } from "react-helmet-async";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { UserContext } from "../../providers/ContextProvider/ContextProvider";
+import { toast } from "react-toastify";
+import { LuEye, LuEyeOff } from "react-icons/lu";
 
 const Login = () => {
-  const { createUser } = useContext(UserContext);
+  const { loginUser, logInWithGoogle, logInWithGithub, setLoading } =
+    useContext(UserContext);
+  const [isShowPassword, setIsShowPassword] = useState(false);
 
   const handelLoginForm = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    createUser(email, password)
+    loginUser(email, password)
       .then((res) => {
-        console.log(res.user);
+        toast.success(`Log in Success`, {
+          position: "top-right",
+          autoClose: 3000,
+          theme: "dark",
+        });
+        e.target.reset();
+      })
+      .catch((err) => {
+        console.error(err);
+        toast.error(
+          "Something went wrong! Your email or password may not match",
+          {
+            autoClose: 5000,
+            position: "top-center",
+            theme: "dark",
+          }
+        );
+        setLoading(false);
+      });
+  };
+
+  const handelShowPassword = () => {
+    setIsShowPassword(!isShowPassword);
+  };
+
+  const handelLogInWithGoogle = () => {
+    logInWithGoogle()
+      .then((res) => {
+        toast.success(`Log in Success`, {
+          position: "top-right",
+          autoClose: 3000,
+          theme: "dark",
+        });
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+
+  const handelLogInWithGithub = () => {
+    logInWithGithub()
+      .then((res) => {
+        toast.success(`Log in Success`, {
+          position: "top-right",
+          autoClose: 3000,
+          theme: "dark",
+        });
       })
       .catch((err) => {
         console.error(err);
@@ -47,25 +97,39 @@ const Login = () => {
                   required
                 />
               </div>
-              <div>
+              <div className="relative">
                 <label className="label">
                   <strong className="label-text">Password</strong>
                 </label>
                 <input
-                  type="password"
+                  type={isShowPassword ? "text" : "password"}
                   name="password"
                   placeholder="Password"
                   className="focus:outline-none w-full input rounded-none outline-none bg-[#f3f3f3]"
                   required
                 />
-                <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
-                </label>
+
+                {/* password show eye off-on */}
+                <div className="absolute right-3 bottom-4 ">
+                  {isShowPassword ? (
+                    <span
+                      className="cursor-pointer"
+                      onClick={handelShowPassword}
+                    >
+                      <LuEye />
+                    </span>
+                  ) : (
+                    <span
+                      className="cursor-pointer"
+                      onClick={handelShowPassword}
+                    >
+                      <LuEyeOff />
+                    </span>
+                  )}
+                </div>
               </div>
               <div className="form-control my-5">
-                <button className="btn w-full rounded-none hover:bg-black text-white bg-[#403f3f]">
+                <button className="btn w-full rounded-none hover:bg-black text-white bg-[#2B3440]">
                   Log in
                 </button>
               </div>
@@ -77,14 +141,14 @@ const Login = () => {
               </div>
               <div className="flex justify-center gap-5">
                 <button
-                  // onClick={handelLogInWithGoogle}
+                  onClick={handelLogInWithGoogle}
                   className="btn flex items-center gap-2"
                 >
                   <img className="w-8" src={googleLogo} alt="Google" />
                   <span> Google</span>
                 </button>
                 <button
-                  // onClick={handelLogInWithGithub}
+                  onClick={handelLogInWithGithub}
                   className="btn flex items-center gap-2"
                 >
                   <img className="w-8" src={githubLogo} alt="Github" />

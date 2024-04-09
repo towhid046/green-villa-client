@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-cards";
-import { EffectCards } from "swiper/modules";
+import { EffectCards, Autoplay } from "swiper/modules";
+
 import heroBgImg from "../../assets/images/hero-img.png";
 
 const Hero = () => {
@@ -22,7 +23,7 @@ const Hero = () => {
       className="bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${heroBgImg})` }}
     >
-      <div className="backdrop-brightness-50">
+      <div className="backdrop-brightness-50 ">
         <div className="flex flex-col lg:flex-row lg:items-start justify-between container mx-auto px-4 md:py-12 py-7 xl:gap-56 lg:gap-40 gap-10 ">
           <div className=" space-y-6 text-center lg:text-left text-gray-100">
             <h1 className="md:text-5xl max-w-lg text-3xl font-bold bg-gradient-to-r from-blue-200 via-blue-100 to-green-400 inline-block text-transparent bg-clip-text">
@@ -45,8 +46,12 @@ const Hero = () => {
             <Swiper
               effect={"cards"}
               grabCursor={true}
-              modules={[EffectCards]}
-              className="md:max-w-96 max-w-52 h-72 md:h-[75vh]"
+              modules={[EffectCards, Autoplay]}
+              autoplay={{
+                delay: 2000,
+                disableOnInteraction: false,
+              }}
+              className="md:max-w-96 max-w-52 h-72 md:h-[480px]"
             >
               {sliders &&
                 sliders.map((slide) => (

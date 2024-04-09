@@ -2,15 +2,16 @@ import { createBrowserRouter } from "react-router-dom";
 import Root from "../layout/Root";
 import Home from "../pages/Home/Home";
 import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
-import Register from './../pages/Register/Register';
-import Login from './../pages/Login/Login';
-import UserProfile from './../pages/UserProfile/UserProfile';
+import Register from "./../pages/Register/Register";
+import Login from "./../pages/Login/Login";
+import UserProfile from "./../pages/UserProfile/UserProfile";
+import NotFound from "./../pages/NotFound/NotFound";
 
 const routes = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    errorElement: <h2 className="text-3xl">Error 404</h2>,
+    errorElement: <NotFound />,
     children: [
       {
         path: "/",
@@ -18,20 +19,20 @@ const routes = createBrowserRouter([
       },
       {
         path: "/update-profile",
-        element: <UpdateProfile/>
+        element: <UpdateProfile />,
       },
       {
         path: "/user-profile",
-        element: <UserProfile/>
+        element: <UserProfile />,
       },
       {
-        path: '/register',
-        element: <Register/>
+        path: "/register",
+        element: <Register />,
       },
       {
-        path: '/login',
-        element: <Login/>
-      }
+        path: "/login",
+        element: <Login />,
+      },
     ],
   },
 ]);

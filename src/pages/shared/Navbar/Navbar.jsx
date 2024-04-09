@@ -2,19 +2,19 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { UserContext } from "../../../providers/ContextProvider/ContextProvider";
 import { FaRegUserCircle } from "react-icons/fa";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 const Navbar = () => {
-  const { user, LogOutUser } = useContext(UserContext);
+  const { user, logOutUser, loading } = useContext(UserContext);
 
   const handelLogOutUser = () => {
-    LogOutUser()
+    logOutUser()
       .then((res) => {
         toast.success(`Log Out success`, {
           position: "top-center",
           autoClose: 3000,
-          })
-        console.log(res.user);
+          theme: "dark",
+        });
       })
       .catch((err) => {
         console.error(err);
@@ -36,7 +36,7 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="bg-base-100 sticky top-0 z-10 py-2 shadow-sm">
+    <nav className="bg-base-100 sticky top-0 z-10 py-1 shadow-sm">
       <div className="navbar container mx-auto px-2">
         <div className="navbar-start">
           <div className="dropdown">
@@ -82,26 +82,47 @@ const Navbar = () => {
           <ul className="text-base menu menu-horizontal px-1 gap-3">{links}</ul>
         </div>
         <div className="navbar-end gap-3 mr-2">
-          {user ? (
-            <>
-              <span className="text-3xl cursor-pointer">
-                <FaRegUserCircle />
-              </span>
-              <button
-                onClick={handelLogOutUser}
-                className="btn md:btn  btn-primary btn-sm"
-              >
-                Log Out
-              </button>
-            </>
+          {loading ? (
+           <span className="loading loading-dots loading-md"></span>
           ) : (
             <>
-              <Link to={"/register"} className="btn btn-info  md:flex hidden">
-                Sign Up
-              </Link>
-              <Link to={"/login"} className="btn md:btn  btn-primary btn-sm">
-                Sign In
-              </Link>
+              {user ? (
+                <>
+                  <span
+                    title={user?.displayName}
+                    className="text-3xl cursor-pointer"
+                  >
+                    {user.photoURL && (
+                      <img
+                        className="md:w-10 w-8 rounded-full"
+                        src={user.photoURL}
+                        alt="User"
+                      />
+                    )}
+                  </span>
+                  <button
+                    onClick={handelLogOutUser}
+                    className="btn md:btn md:text-white text-white md:bg-[#093B59] bg-[#093B59] md:hover:bg-black hover:bg-black btn-sm"
+                  >
+                    Log Out
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link
+                    to={"/register"}
+                    className="btn  hover:bg-green-400  hover:text-white bg-green-300  md:flex hidden"
+                  >
+                    Sign Up
+                  </Link>
+                  <Link
+                    to={"/login"}
+                    className="btn hover:bg-black  bg-[#093B59] text-white"
+                  >
+                    Sign In
+                  </Link>
+                </>
+              )}
             </>
           )}
         </div>
