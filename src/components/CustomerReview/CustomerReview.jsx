@@ -27,12 +27,13 @@ const CustomerReview = () => {
 
   return (
     <section className="bg-[#f3f3f3] py-12">
-      <SectionTitle 
+      <div className="container mx-auto px-4">
+     <SectionTitle 
       sectionTitle="What Our Customers Say"
       sectionDescription={sectionDescription}
       />
 
-      <div className="max-w-5xl mx-auto px-4">
+      <div className="max-w-5xl mx-auto">
         <Swiper
           spaceBetween={30}
           pagination={{
@@ -53,6 +54,7 @@ const CustomerReview = () => {
           ))}
         </Swiper>
       </div>
+    </div>
     </section>
   );
 };

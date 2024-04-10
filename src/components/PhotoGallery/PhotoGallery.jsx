@@ -25,7 +25,7 @@ const PhotoGallery = () => {
       <div className="grid lg:grid-cols-3 gap-6 md:grid-cols-2 grid-cols-1 ">
         {photos &&
           photos
-            .slice(0, 6)
+            .slice(0, 6).reverse()
             .map((photo) => <Photo key={photo.id} photo={photo} />)}
       </div>
     </section>
