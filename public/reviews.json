@@ -1,0 +1,53 @@
+[
+    {
+      "id": 1,
+      "description": "My experience with GreenVilla, the residential real estate website, was exceptional. I found the perfect home that exceeded my expectations in terms of size, location, and amenities. The website's user-friendly interface made browsing and filtering properties a breeze. I highly recommend GreenVilla to anyone looking to buy or rent a house.",
+      "rating": 5,
+      "author": {
+        "image": "https://images.pexels.com/photos/7595194/pexels-photo-7595194.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "name": "John Doe",
+        "location": "United States"
+      }
+    },
+    {
+      "id": 2,
+      "description": "I had a satisfying experience using GreenVilla, the residential real estate website. I was able to find several options that matched my criteria, and the platform provided detailed information about each property. While there were minor issues with loading times, overall, it was a smooth process. I would recommend GreenVilla to others.",
+      "rating": 4.5,
+      "author": {
+        "image": "https://images.pexels.com/photos/1043473/pexels-photo-1043473.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "name": "Jane Smith",
+        "location": "Canada"
+      }
+    },
+    {
+      "id": 3,
+      "description": "My experience with GreenVilla, the real estate website, was average. While it offered a decent selection of properties, I found the search filters to be somewhat limited. Additionally, the interface could be more intuitive, making navigation easier. It's a reasonable option for house hunting, but there's room for improvement.",
+      "rating": 3,
+      "author": {
+        "image": "https://images.pexels.com/photos/874158/pexels-photo-874158.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "name": "David Brown",
+        "location": "United Kingdom"
+      }
+    },
+    {
+      "id": 4,
+      "description": "Unfortunately, my experience with GreenVilla, the real estate website, was disappointing. I encountered numerous technical glitches while searching for properties, which hindered the process. Additionally, the lack of updated listings and poor customer support further soured my experience. I would not recommend GreenVilla.",
+      "rating": 3.5,
+      "author": {
+        "image": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "name": "Emily Green",
+        "location": "Australia"
+      }
+    },
+    {
+      "id": 5,
+      "description": "My interaction with GreenVilla, the residential real estate website, was regrettable. The listings were outdated and inaccurate, wasting my time and causing frustration. Moreover, the website's interface was clunky and difficult to navigate. I advise against using GreenVilla for house hunting.",
+      "rating": 2,
+      "author": {
+        "image": "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "name": "Michael Johnson",
+        "location": "Germany"
+      }
+    }
+  ]
+  

@@ -3,6 +3,8 @@ import { Helmet } from "react-helmet-async";
 import Estates from "./../../components/Estates/Estates";
 import { scrollToTop } from "../../utility/scrollToTop";
 import { useEffect } from "react";
+import CustomerReview from './../../components/CustomerReview/CustomerReview';
+
 
 const Home = () => {
   useEffect(() => {
@@ -15,6 +17,7 @@ const Home = () => {
       </Helmet>
       <Hero />
       <Estates />
+      <CustomerReview/>
     </div>
   );
 };
