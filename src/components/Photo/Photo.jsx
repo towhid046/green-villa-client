@@ -1,26 +1,17 @@
+import PropTypes from "prop-types";
 const Photo = ({ photo }) => {
+  const { image, id } = photo;
   return (
     <>
       <img
-        // onClick={() => document.getElementById("my_modal_5").showModal()}
-        className="hover:scale-125 transition duration-50 ease-in-out"
-        key={photo.id}
-        src={photo?.image}
+        className="rounded cursor-pointer lg:hover:scale-125 transition duration-50 ease-in-out"
+        src={image}
         alt="Image"
       />
-      <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
-        <div className="modal-box">
-          {/* <img src={photo?.image} alt="" /> */}
-          <div className="modal-action">
-            <form method="dialog">
-              {/* if there is a button in form, it will close the modal */}
-              <button className="btn">Close</button>
-            </form>
-          </div>
-        </div>
-      </dialog>
     </>
   );
 };
-
+Photo.propTypes = {
+  photo: PropTypes.object.isRequired,
+};
 export default Photo;

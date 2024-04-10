@@ -8,7 +8,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 import { useEffect, useState } from "react";
 
 const CustomerReview = () => {
@@ -38,7 +38,11 @@ const CustomerReview = () => {
           pagination={{
             clickable: true,
           }}
-          modules={[Pagination]}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          modules={[Autoplay ,Pagination]}
         >
           {reviews.map((review) => (
             <SwiperSlide key={review.id}>

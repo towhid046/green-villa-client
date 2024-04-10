@@ -26,11 +26,19 @@ const Navbar = () => {
         <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to="/update-profile">Update Profile</NavLink>
-      </li>
-      <li>
         <NavLink to="/about-us">About Us</NavLink>
       </li>
+      <li>
+        <NavLink to="/about-us">Blog</NavLink>
+      </li>
+      <li>
+        <NavLink to="/about-us">Contact</NavLink>
+      </li>
+      {user && (
+        <li>
+          <NavLink to="/update-profile">Update Profile</NavLink>
+        </li>
+      )}
     </>
   );
 
@@ -92,12 +100,13 @@ const Navbar = () => {
                     className="text-3xl cursor-pointer"
                   >
                     {user.photoURL && (
-                    <Link to={'/user-profile'}>
-                    <img
-                        className="md:w-10 w-8 rounded-full"
-                        src={user.photoURL}
-                        alt="User"
-                      /></Link>
+                      <Link to={"/user-profile"}>
+                        <img
+                          className="md:w-10 w-8 rounded-full"
+                          src={user.photoURL}
+                          alt="User"
+                        />
+                      </Link>
                     )}
                   </span>
                   <button

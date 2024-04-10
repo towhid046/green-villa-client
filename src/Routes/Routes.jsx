@@ -20,10 +20,7 @@ const routes = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
-      {
-        path: "/update-profile",
-        element: <UpdateProfile />,
-      },
+
       {
         path: "/about-us",
         element: <AboutUs />,
@@ -47,7 +44,15 @@ const routes = createBrowserRouter([
       {
         path:'/estate/:estateId',
         element: <EstateDetails/>
-      }
+      },
+      {
+        path: "/update-profile",
+        element: (
+          <PrivateRoute>
+            <UpdateProfile />
+          </PrivateRoute>
+        ),
+      },
     ],
   },
 ]);
