@@ -3,8 +3,8 @@ import { Helmet } from "react-helmet-async";
 import Estates from "./../../components/Estates/Estates";
 import { scrollToTop } from "../../utility/scrollToTop";
 import { useEffect } from "react";
-import CustomerReview from './../../components/CustomerReview/CustomerReview';
-
+import CustomerReview from "./../../components/CustomerReview/CustomerReview";
+import PhotoGallery from "../../components/PhotoGallery/PhotoGallery";
 
 const Home = () => {
   useEffect(() => {
@@ -17,7 +17,8 @@ const Home = () => {
       </Helmet>
       <Hero />
       <Estates />
-      <CustomerReview/>
+      <PhotoGallery/>
+      <CustomerReview />
     </div>
   );
 };
