@@ -19,7 +19,6 @@ export const UserContext = createContext(null);
 const ContextProvider = ({ children }) => {
   const [user, setUser] = useState();
   const [loading, setLoading] = useState(true);
-  const [estates, setEstates] = useState([]);
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -61,15 +60,6 @@ const ContextProvider = ({ children }) => {
     return () => unSubscribe();
   }, []);
 
-  // load estates data:
-  useEffect(() => {
-    const loadData = async () => {
-      const res = await fetch("estates.json");
-      const data = await res.json();
-      setEstates(data);
-    };
-    loadData();
-  }, []);
 
   const userInfo = {
     createUser,
@@ -81,7 +71,6 @@ const ContextProvider = ({ children }) => {
     updateUserProfile,
     loading,
     setLoading,
-    estates,
   };
 
   return (

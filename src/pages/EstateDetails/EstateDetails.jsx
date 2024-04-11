@@ -1,7 +1,6 @@
-import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useParams, useLoaderData } from "react-router-dom";
 import { scrollToTop } from "../../utility/scrollToTop";
-import { UserContext } from "./../../providers/ContextProvider/ContextProvider";
 
 import { LuMapPin } from "react-icons/lu";
 import { IoCarSportSharp } from "react-icons/io5";
@@ -11,11 +10,9 @@ import { PiSquaresFourThin } from "react-icons/pi";
 import { IoCheckmarkCircle } from "react-icons/io5";
 
 const EstateDetails = () => {
-  const { estates } = useContext(UserContext);
+  const estates = useLoaderData();
   const [estate, setEstate] = useState({});
   const { estateId } = useParams();
-
-
 
   useEffect(() => {
     const targetedEstate = estates.find((est) => est.id === Number(estateId));
@@ -80,23 +77,23 @@ const EstateDetails = () => {
             <hr />
           </div>
           <ul className=" grid md:grid-cols-2 gap-4 grid-cols-1">
-          <li className="flex items-center gap-2">
-            <PiSquaresFourThin  className="text-blue-400 text-xl"/>
-            <span>{area}</span>
-          </li>
-          <li className="flex items-center gap-2">
-            <IoCarSportSharp className="text-blue-400 text-xl" />
-            <span>{garages} Garages</span>
-          </li>
-          <li className="flex items-center gap-2">
-            <FaBed  className="text-blue-400 text-xl"/>
-            <span>{bedrooms} Beedrooms</span>
-          </li>
-          <li className="flex items-center gap-2">
-            <FaBath  className="text-blue-400 text-xl"/>
-            <span>{bathrooms} Bathrooms</span>
-          </li>
-        </ul>
+            <li className="flex items-center gap-2">
+              <PiSquaresFourThin className="text-blue-400 text-xl" />
+              <span>{area}</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <IoCarSportSharp className="text-blue-400 text-xl" />
+              <span>{garages} Garages</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <FaBed className="text-blue-400 text-xl" />
+              <span>{bedrooms} Beedrooms</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <FaBath className="text-blue-400 text-xl" />
+              <span>{bathrooms} Bathrooms</span>
+            </li>
+          </ul>
           <hr />
 
           <p>
