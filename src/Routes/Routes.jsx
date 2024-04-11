@@ -9,7 +9,7 @@ import NotFound from "./../pages/NotFound/NotFound";
 import PrivateRoute from "./PrivateRoute";
 import AboutUs from "./../pages/AboutUs/AboutUs";
 import EstateDetails from "../pages/EstateDetails/EstateDetails";
-import Contact from './../pages/Contact/Contact';
+import Contact from "./../pages/Contact/Contact";
 
 const routes = createBrowserRouter([
   {
@@ -59,9 +59,9 @@ const routes = createBrowserRouter([
         ),
       },
       {
-        path: 'contact',
-        element: <Contact/>
-      }
+        path: "contact",
+        element: <Contact />,
+      },
     ],
   },
 ]);

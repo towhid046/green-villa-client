@@ -90,7 +90,7 @@ const Register = () => {
       </Helmet>
       <div className="hero md:min-h-screen container-fluid pt-12 pb-8">
         <div className="w-full px-4">
-          <div className="max-w-xl bg-base-100 border mx-auto md:p-12 py-8 px-6">
+          <div className="max-w-xl rounded-xl bg-base-100 border mx-auto md:p-12 py-8 px-6">
             <h1 className="text-2xl font-bold text-center mb-8">
               Register your account
             </h1>
@@ -104,7 +104,7 @@ const Register = () => {
                   type="text"
                   name="name"
                   placeholder="Enter your name"
-                  className="focus:outline-none input w-full rounded-none outline-none bg-[#f3f3f3]"
+                  className="focus:outline-none input w-full rounded-lg outline-none bg-[#f3f3f3]"
                   required
                 />
               </div>
@@ -116,7 +116,7 @@ const Register = () => {
                   type="text"
                   name="imgurl"
                   placeholder="Enter your photo url"
-                  className="focus:outline-none input w-full rounded-none outline-none bg-[#f3f3f3]"
+                  className="focus:outline-none input w-full rounded-lg outline-none bg-[#f3f3f3]"
                   required
                 />
               </div>
@@ -128,7 +128,7 @@ const Register = () => {
                   type="email"
                   name="email"
                   placeholder="Enter your email"
-                  className="focus:outline-none input w-full rounded-none outline-none bg-[#f3f3f3]"
+                  className="focus:outline-none input w-full rounded-lg outline-none bg-[#f3f3f3]"
                   required
                 />
               </div>
@@ -141,7 +141,7 @@ const Register = () => {
                   type={isShowPassword ? "text" : "password"}
                   name="password"
                   placeholder="Password"
-                  className="focus:outline-none w-full input rounded-none outline-none bg-[#f3f3f3]"
+                  className="focus:outline-none w-full input rounded-lg outline-none bg-[#f3f3f3]"
                   required
                 />
 
@@ -177,7 +177,7 @@ const Register = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn w-full rounded-none hover:bg-black text-white bg-[#2B3440]">
+                <button className="btn w-full rounded-lg hover:bg-black text-white bg-[#2B3440]">
                   Register
                 </button>
               </div>

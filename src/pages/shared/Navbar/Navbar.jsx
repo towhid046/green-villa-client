@@ -33,14 +33,13 @@ const Navbar = () => {
       </li>
       {user && (
         <>
-        <li>
-          <NavLink to="/update-profile">Update Profile</NavLink>
-        </li>
-        <li>
-          <NavLink to="/update-profile">Saved Properties</NavLink>
-        </li>
+          <li>
+            <NavLink to="/update-profile">Update Profile</NavLink>
+          </li>
+          <li>
+            <NavLink to="/update-profile">Saved Properties</NavLink>
+          </li>
         </>
-        
       )}
     </>
   );
@@ -102,15 +101,15 @@ const Navbar = () => {
                     title={user?.displayName}
                     className="text-3xl cursor-pointer"
                   >
-                    {user.photoURL && (
+                    {
                       <Link to={"/user-profile"}>
                         <img
                           className="md:w-10 w-8 rounded-full"
-                          src={user.photoURL}
+                          src={user?.photoURL}
                           alt="User"
                         />
                       </Link>
-                    )}
+                    }
                   </span>
                   <button
                     onClick={handelLogOutUser}
@@ -123,7 +122,7 @@ const Navbar = () => {
                 <>
                   <Link
                     to={"/register"}
-                    className="btn  hover:bg-green-400  hover:text-white bg-green-300  md:flex hidden"
+                    className="btn  hover:bg-green-300  hover:text-white bg-green-300  md:flex hidden"
                   >
                     Sign Up
                   </Link>

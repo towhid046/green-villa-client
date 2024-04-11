@@ -45,7 +45,7 @@ const Contact = () => {
               <h3 className="text-2xl font-semibold mb-4">
                 Contact Information
               </h3>
-              <div className=" bg-white border-l-4 border-blue-500 shadow-md p-4 mb-6">
+              <div className=" bg-white border-l-4 border-green-300 shadow-md p-4 mb-6 ">
                 <p className="text-blue-900">
                   Feel free to let us know if you have any questions or concerns
                   about your affiliate marketing journey, we're happy to help!
@@ -79,7 +79,7 @@ const Contact = () => {
                     type="text"
                     name="name"
                     placeholder="Enter your name"
-                    className="focus:outline-none input w-full rounded-none outline-none bg-[#f3f3f3]"
+                    className="focus:outline-none input w-full rounded-lg outline-none bg-[#f3f3f3]"
                     required
                   />
                 </div>
@@ -92,7 +92,7 @@ const Contact = () => {
                     type="email"
                     name="email"
                     placeholder="Enter your email"
-                    className="focus:outline-none input w-full rounded-none outline-none bg-[#f3f3f3]"
+                    className="focus:outline-none input w-full rounded-lg outline-none bg-[#f3f3f3]"
                     required
                   />
                 </div>
@@ -105,7 +105,7 @@ const Contact = () => {
                   type="text"
                   name="subject"
                   placeholder="Enter your Subject"
-                  className="focus:outline-none input w-full rounded-none outline-none bg-[#f3f3f3]"
+                  className="focus:outline-none input w-full rounded-lg outline-none bg-[#f3f3f3]"
                   required
                 />
               </div>
@@ -114,13 +114,13 @@ const Contact = () => {
                   <strong className="label-text">Message</strong>
                 </label>
                 <textarea
-                  className="focus:outline-none input w-full rounded-none outline-none bg-[#f3f3f3] textarea  text-base xl:h-60 h-40"
+                  className="focus:outline-none input w-full rounded-lg outline-none bg-[#f3f3f3] textarea  text-base xl:h-60 h-40"
                   required
                   placeholder="Message"
                 ></textarea>
               </div>
               <div className="form-control mt-6">
-                <button className="btn w-full rounded-none hover:bg-black text-white bg-[#2B3440]">
+                <button className="btn w-full rounded-lg hover:bg-black text-white bg-[#2B3440]">
                   Send message
                 </button>
               </div>

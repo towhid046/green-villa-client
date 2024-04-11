@@ -84,7 +84,7 @@ const Login = () => {
       </Helmet>
       <div className="hero md:min-h-screen container-fluid pt-12 pb-8">
         <div className="w-full px-4">
-          <div className="max-w-xl border bg-base-100 mx-auto md:p-12 py-8 px-6">
+          <div className="max-w-xl border rounded-xl bg-base-100 mx-auto md:p-12 py-8 px-6">
             <h1 className="text-2xl font-bold text-center mb-8">
               Login your account
             </h1>
@@ -98,7 +98,7 @@ const Login = () => {
                   type="email"
                   name="email"
                   placeholder="Enter your email"
-                  className="focus:outline-none input w-full rounded-none outline-none bg-[#f3f3f3]"
+                  className="focus:outline-none input w-full rounded-lg outline-none bg-[#f3f3f3]"
                   required
                 />
               </div>
@@ -110,7 +110,7 @@ const Login = () => {
                   type={isShowPassword ? "text" : "password"}
                   name="password"
                   placeholder="Password"
-                  className="focus:outline-none w-full input rounded-none outline-none bg-[#f3f3f3]"
+                  className="focus:outline-none w-full input rounded-lg outline-none bg-[#f3f3f3]"
                   required
                 />
 
@@ -134,7 +134,7 @@ const Login = () => {
                 </div>
               </div>
               <div className="form-control my-5">
-                <button className="btn w-full rounded-none hover:bg-black text-white bg-[#2B3440]">
+                <button className="btn w-full rounded-lg hover:bg-black text-white bg-[#2B3440]">
                   Log in
                 </button>
               </div>
