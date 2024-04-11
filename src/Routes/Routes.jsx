@@ -6,9 +6,10 @@ import Register from "./../pages/Register/Register";
 import Login from "./../pages/Login/Login";
 import UserProfile from "./../pages/UserProfile/UserProfile";
 import NotFound from "./../pages/NotFound/NotFound";
-import PrivateRoute  from "./PrivateRoute";
-import AboutUs from './../pages/AboutUs/AboutUs';
+import PrivateRoute from "./PrivateRoute";
+import AboutUs from "./../pages/AboutUs/AboutUs";
 import EstateDetails from "../pages/EstateDetails/EstateDetails";
+import Contact from './../pages/Contact/Contact';
 
 const routes = createBrowserRouter([
   {
@@ -42,8 +43,12 @@ const routes = createBrowserRouter([
         element: <Login />,
       },
       {
-        path:'/estate/:estateId',
-        element: <EstateDetails/>
+        path: "/estate/:estateId",
+        element: (
+          <PrivateRoute>
+            <EstateDetails />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/update-profile",
@@ -53,6 +58,10 @@ const routes = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path: 'contact',
+        element: <Contact/>
+      }
     ],
   },
 ]);

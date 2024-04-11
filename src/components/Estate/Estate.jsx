@@ -45,7 +45,7 @@ const Estate = ({ estate }) => {
         </div>
         <ul className=" grid md:grid-cols-2 gap-4 grid-cols-1">
           <li className="flex items-center gap-2">
-            <PiSquaresFourThin  className="text-blue-400 text-xl"/>
+            <PiSquaresFourThin className="text-blue-400 text-xl" />
             <span>{area}</span>
           </li>
           <li className="flex items-center gap-2">
@@ -53,11 +53,11 @@ const Estate = ({ estate }) => {
             <span>{garages} Garages</span>
           </li>
           <li className="flex items-center gap-2">
-            <FaBed  className="text-blue-400 text-xl"/>
+            <FaBed className="text-blue-400 text-xl" />
             <span>{bedrooms} Beedrooms</span>
           </li>
           <li className="flex items-center gap-2">
-            <FaBath  className="text-blue-400 text-xl"/>
+            <FaBath className="text-blue-400 text-xl" />
             <span>{bathrooms} Bathrooms</span>
           </li>
         </ul>
@@ -73,7 +73,7 @@ const Estate = ({ estate }) => {
             to={`/estate/${id}`}
             className="btn  w-full bg-[#2B3440] hover:bg-black text-white"
           >
-            View Details
+            View Property
           </Link>
         </div>
       </div>

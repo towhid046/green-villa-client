@@ -1,9 +1,9 @@
-/* eslint-disable react/jsx-key */
 import { Link } from "react-router-dom";
-import { FaFacebook } from "react-icons/fa";
-import { FaWhatsapp } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
+import { FaWhatsapp, FaInstagram, FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { FiMapPin } from "react-icons/fi";
+import { LuPhone } from "react-icons/lu";
+import { IoMailOutline } from "react-icons/io5";
 const Footer = () => {
   const socialIcons = [
     <FaFacebook />,
@@ -11,6 +11,18 @@ const Footer = () => {
     <FaInstagram />,
     <FaXTwitter />,
   ];
+
+  const contacts = [
+    {
+      icon: <FiMapPin />,
+      text: "127 Downtown Metropolis, New York",
+    },
+    { icon: <LuPhone />, text: "+11 23456789123" },
+    { icon: <IoMailOutline />, text: "abc123@gmail.com" },
+  ];
+
+  const quickLinks = ["Home", "About", "Blog", "FAQ"];
+  const services = ["Home", "About", "Blog", "FAQ"];
 
   return (
     <>
@@ -28,42 +40,52 @@ const Footer = () => {
               nestled amidst nature's embrace.{" "}
             </p>
             <ul className="mt-4 flex gap-3 text-xl items-center text-blue-400">
-              {socialIcons.map((icon) => (
-                <li className="cursor-pointer" key={icon}>
+              {socialIcons.map((icon, index) => (
+                <li className="cursor-pointer" key={index}>
                   {icon}
                 </li>
               ))}
             </ul>
           </div>
+
           <nav>
             <h6 className="footer-title text-lg">Quick Links</h6>
-            <a className="link link-hover">Home</a>
-            <a className="link link-hover">About Us</a>
-            <a className="link link-hover">Blog</a>
-            <a className="link link-hover">FAQ</a>
+            {quickLinks.map((link, index) => (
+              <a key={index} className="link link-hover">
+                {link}
+              </a>
+            ))}
           </nav>
+
           <nav>
             <h6 className="footer-title text-lg">Services</h6>
-            <a className="link link-hover">About</a>
-            <a className="link link-hover">Contact</a>
-            <a className="link link-hover">Jobs</a>
-            <a className="link link-hover">Press kit</a>
+            {services.map((link, index) => (
+              <a key={index} className="link link-hover">
+                {link}
+              </a>
+            ))}
           </nav>
-          <nav>
+
+          {/* contact */}
+          <ul>
             <h6 className="footer-title text-lg">Contact</h6>
-            <a className="link link-hover">Terms of use</a>
-            <a className="link link-hover">Privacy policy</a>
-            <a className="link link-hover">Cookie policy</a>
-          </nav>
+            {contacts.map((contact, index) => (
+              <li key={index} className="flex gap-3">
+                <span className="text-lg">{contact.icon}</span>
+                <span>{contact.text}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </footer>
+
       <footer className="  bg-neutral ">
         <div className=" container md:flex-row flex-col flex justify-between  mx-auto px-4 items-center py-4 text-neutral-content text-[13px] gap-3">
-            <p>Copyright &copy; 2024 - All right reserved</p>
-              <ul className="flex gap-3">
-                <li>Terms of use</li> |
-                <li>Privacy policy</li>
-              </ul>
+          <p>Copyright &copy; 2024 - All right reserved</p>
+          <ul className="flex gap-3">
+            <li className="link link-hover">Terms of use</li> |
+            <li className="link link-hover">Privacy policy</li>
+          </ul>
         </div>
       </footer>
     </>

@@ -29,15 +29,18 @@ const Navbar = () => {
         <NavLink to="/about-us">About Us</NavLink>
       </li>
       <li>
-        <NavLink to="/about-us">Blog</NavLink>
-      </li>
-      <li>
-        <NavLink to="/about-us">Contact</NavLink>
+        <NavLink to="/contact">Contact</NavLink>
       </li>
       {user && (
+        <>
         <li>
           <NavLink to="/update-profile">Update Profile</NavLink>
         </li>
+        <li>
+          <NavLink to="/update-profile">Saved Properties</NavLink>
+        </li>
+        </>
+        
       )}
     </>
   );
