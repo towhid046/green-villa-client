@@ -5,6 +5,7 @@ import { FaBath } from "react-icons/fa";
 import { FaBed } from "react-icons/fa6";
 import { PiSquaresFourThin } from "react-icons/pi";
 import PropTypes from "prop-types";
+import { scrollToTop } from './../../utility/scrollToTop';
 
 const Estate = ({ estate }) => {
   const {
@@ -70,6 +71,7 @@ const Estate = ({ estate }) => {
 
         <div className=" justify-end">
           <Link
+          onClick={scrollToTop}
             to={`/estate/${id}`}
             className="btn  w-full bg-[#2B3440] hover:bg-black text-white"
           >

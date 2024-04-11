@@ -8,6 +8,8 @@ import { FaBath } from "react-icons/fa";
 import { FaBed } from "react-icons/fa6";
 import { PiSquaresFourThin } from "react-icons/pi";
 import { IoCheckmarkCircle } from "react-icons/io5";
+import { Helmet } from "react-helmet-async";
+import Estates from './../../components/Estates/Estates';
 
 const EstateDetails = () => {
   const estates = useLoaderData();
@@ -40,7 +42,11 @@ const EstateDetails = () => {
   } = estate;
 
   return (
-    <div className="container mx-auto px-4 py-12 flex flex-col lg:flex-row justify-between gap-10 items-start">
+    <>
+    <section className="container mx-auto px-4 pt-12 pb-20 flex flex-col lg:flex-row justify-between gap-10 items-start">
+      <Helmet>
+        <title>Green Villa | Property Details</title>
+      </Helmet>
       <figure className="relative flex-1">
         <img className="rounded-sm" src={image} alt="House Image" />
         <span
@@ -114,9 +120,17 @@ const EstateDetails = () => {
                 </li>
               ))}
           </ul>
+          <button className="btn w-full rounded-lg hover:bg-black text-white bg-[#2B3440]">
+            Save Property
+          </button>
         </div>
       </div>
-    </div>
+      
+    </section>
+    <div>
+        <Estates/>
+      </div>
+    </>
   );
 };
 

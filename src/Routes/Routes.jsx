@@ -7,9 +7,9 @@ import Login from "./../pages/Login/Login";
 import UserProfile from "./../pages/UserProfile/UserProfile";
 import NotFound from "./../pages/NotFound/NotFound";
 import PrivateRoute from "./PrivateRoute";
-import AboutUs from "./../pages/AboutUs/AboutUs";
 import EstateDetails from "../pages/EstateDetails/EstateDetails";
 import Contact from "./../pages/Contact/Contact";
+import News from './../pages/News/News';
 
 const routes = createBrowserRouter([
   {
@@ -24,8 +24,8 @@ const routes = createBrowserRouter([
       },
 
       {
-        path: "/about-us",
-        element: <AboutUs />,
+        path: "/news",
+        element: <News/>,
       },
       {
         path: "/user-profile",

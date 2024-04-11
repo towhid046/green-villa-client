@@ -39,16 +39,16 @@ const Contact = () => {
           />
         </div>
 
-        <div className="container flex justify-between bg-white rounded-lg border p-6 gap-8 flex-col lg:flex-row">
+        <div className="container flex justify-between bg-white rounded-lg border p-5 gap-8 flex-col lg:flex-row">
           <div className="lg:w-1/2">
             <div className=" bg-indigo-50 border border-blue-200 rounded-lg p-6">
               <h3 className="text-2xl font-semibold mb-4">
                 Contact Information
               </h3>
-              <div className=" bg-white border-l-4 border-green-300 shadow-md p-4 mb-6 ">
+              <div className=" bg-white border-l-4 border-green-300 shadow-sm p-4 mb-6 rounded-lg">
                 <p className="text-blue-900">
                   Feel free to let us know if you have any questions or concerns
-                  about your affiliate marketing journey, we're happy to help!
+                  about Green Villa journey, we're happy to help!
                 </p>
               </div>
               <ul className=" text-blue-900 space-y-3">

@@ -4,7 +4,7 @@ const Photo = ({ photo }) => {
   return (
     <div className="overflow-hidden rounded">
       <img
-        className=" rounded cursor-pointer hover:scale-125 transition duration-50 ease-in-out"
+        className=" rounded cursor-pointer   hover:scale-125 transition duration-50 ease-in-out"
         src={image}
         alt="Image"
       />
