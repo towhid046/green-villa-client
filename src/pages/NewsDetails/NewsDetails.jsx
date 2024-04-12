@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 
-import PropTypes from "prop-types";
 import { MdApartment } from "react-icons/md";
 import { CiCalendar } from "react-icons/ci";
-import { Link } from "react-router-dom";
 import SectionHeading from "./../shared/SectionHeading/SectionHeading";
 import NewsCard from "./../../components/NewsCard/NewsCard";
 
@@ -12,7 +10,6 @@ const NewsDetails = () => {
   const { newsId } = useParams();
   const news = useLoaderData();
   const [singleNews, setSingleNews] = useState({});
-
 
   useEffect(() => {
     const targetedNews = news.find((info) => info.id === Number(newsId));
@@ -67,9 +64,11 @@ const NewsDetails = () => {
       <div>
         <h2 className="text-2xl font-bold pt-16 pb-6">View related News</h2>
         <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {news.filter(item=>item.id !== Number(newsId)).map((info) => (
-            <NewsCard key={info.id} info={info} />
-          ))}
+          {news
+            .filter((item) => item.id !== Number(newsId))
+            .map((info) => (
+              <NewsCard key={info.id} info={info} />
+            ))}
         </div>
       </div>
     </section>

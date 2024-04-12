@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { UserContext } from "./../providers/ContextProvider/ContextProvider";
 import PropTypes from "prop-types";
-import {Navigate } from 'react-router-dom'
+import { Navigate } from "react-router-dom";
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useContext(UserContext);
@@ -9,6 +9,7 @@ const PrivateRoute = ({ children }) => {
     return children;
   }
   return <Navigate to="/login"></Navigate>;
+
 };
 
 PrivateRoute.propTypes = {

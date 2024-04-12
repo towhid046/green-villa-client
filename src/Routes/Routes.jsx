@@ -9,8 +9,9 @@ import NotFound from "./../pages/NotFound/NotFound";
 import PrivateRoute from "./PrivateRoute";
 import EstateDetails from "../pages/EstateDetails/EstateDetails";
 import Contact from "./../pages/Contact/Contact";
-import News from './../pages/News/News';
+import News from "./../pages/News/News";
 import NewsDetails from "../pages/NewsDetails/NewsDetails";
+import SavedProperties from "./../pages/SavedProperties/SavedProperties";
 
 const routes = createBrowserRouter([
   {
@@ -24,7 +25,6 @@ const routes = createBrowserRouter([
         element: <Home />,
       },
 
-     
       {
         path: "/user-profile",
         element: (
@@ -59,14 +59,23 @@ const routes = createBrowserRouter([
         ),
       },
       {
-        path: "/news",
-        loader: () => fetch("/news.json"),
-        element: <News/>,
+        path: "/saved-properties",
+        loader: () => fetch("/estates.json"),
+        element: (
+          <PrivateRoute>
+            <SavedProperties />
+          </PrivateRoute>
+        ),
       },
       {
-        path: '/news/:newsId',
+        path: "/news",
         loader: () => fetch("/news.json"),
-        element: <NewsDetails/>
+        element: <News />,
+      },
+      {
+        path: "/news/:newsId",
+        loader: () => fetch("/news.json"),
+        element: <NewsDetails />,
       },
       {
         path: "contact",
