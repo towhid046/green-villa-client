@@ -10,6 +10,7 @@ import PrivateRoute from "./PrivateRoute";
 import EstateDetails from "../pages/EstateDetails/EstateDetails";
 import Contact from "./../pages/Contact/Contact";
 import News from './../pages/News/News';
+import NewsDetails from "../pages/NewsDetails/NewsDetails";
 
 const routes = createBrowserRouter([
   {
@@ -23,11 +24,7 @@ const routes = createBrowserRouter([
         element: <Home />,
       },
 
-      {
-        path: "/news",
-        loader: () => fetch("/news.json"),
-        element: <News/>,
-      },
+     
       {
         path: "/user-profile",
         element: (
@@ -60,6 +57,16 @@ const routes = createBrowserRouter([
             <UpdateProfile />
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/news",
+        loader: () => fetch("/news.json"),
+        element: <News/>,
+      },
+      {
+        path: '/news/:newsId',
+        loader: () => fetch("/news.json"),
+        element: <NewsDetails/>
       },
       {
         path: "contact",

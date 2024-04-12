@@ -9,7 +9,7 @@ import { FaBed } from "react-icons/fa6";
 import { PiSquaresFourThin } from "react-icons/pi";
 import { IoCheckmarkCircle } from "react-icons/io5";
 import { Helmet } from "react-helmet-async";
-import Estates from './../../components/Estates/Estates';
+import Estate from './../../components/Estate/Estate';
 
 const EstateDetails = () => {
   const estates = useLoaderData();
@@ -42,8 +42,8 @@ const EstateDetails = () => {
   } = estate;
 
   return (
-    <>
-    <section className="container mx-auto px-4 pt-12 pb-20 flex flex-col lg:flex-row justify-between gap-10 items-start">
+    <section className="container mx-auto px-4 py-12">
+    <div className=" flex flex-col lg:flex-row justify-between gap-10 items-start">
       <Helmet>
         <title>Green Villa | Property Details</title>
       </Helmet>
@@ -126,11 +126,16 @@ const EstateDetails = () => {
         </div>
       </div>
       
-    </section>
+    </div>
     <div>
-        <Estates/>
+        <h2 className="text-2xl font-bold pt-16 pb-6">View related properties</h2>
+        <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {estates?.filter(item=>item.id !== Number(estateId)).map((estate) => (
+            <Estate key={estate.id} estate={estate} />
+          ))}
+        </div>
       </div>
-    </>
+    </section>
   );
 };
 
