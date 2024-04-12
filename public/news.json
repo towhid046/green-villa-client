@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "thumbnail_img": "https://images.pexels.com/photos/1457841/pexels-photo-1457841.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "release_date": "12 April, 2024",
+    "title": "Introduces Sustainable Housing Solutions",
+    "description": "A leading real estate platform dedicated to promoting sustainable living unveils its latest initiative to revolutionize residential housing. With a focus on environmental conservation and energy efficiency, this initiative aims to redefine the concept of modern living. Through innovative designs, renewable energy integration, and eco-friendly materials, these properties offer a harmonious blend of comfort and sustainability. Prospective homeowners can now experience the benefits of green living while contributing to a healthier planet.",
+    "author": {
+      "name": "Emma Green",
+      "image": "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+  },
+  {
+    "id": 2,
+    "thumbnail_img": "https://images.pexels.com/photos/6758773/pexels-photo-6758773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "release_date": "11 April, 2024",
+    "title": "Unveils Exclusive Waterfront Residences",
+    "description": "Presents an exclusive collection of waterfront residences, offering unparalleled luxury and scenic views. Situated in prime locations, these meticulously designed homes combine elegance with functionality, providing residents with a serene retreat amidst nature's beauty. With a focus on sustainability and premium amenities, these properties redefine upscale living, setting a new standard in residential real estate.",
+    "author": {
+      "name": "John Anderson",
+      "image": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+  },
+  {
+    "id": 3,
+    "thumbnail_img": "https://images.pexels.com/photos/1648771/pexels-photo-1648771.jpeg?auto=compress&cs=tinysrgb&w=400",
+    "release_date": "10 April, 2024",
+    "title": "Launches Affordable Housing Initiative",
+    "description": "Introduces an innovative affordable housing initiative aimed at providing quality homes to individuals and families. Leveraging sustainable construction practices and cost-effective design solutions, these projects offer a range of housing options to accommodate diverse needs and budgets. By prioritizing affordability without compromising on quality, this initiative reaffirms its commitment to making homeownership accessible to all.",
+    "author": {
+      "name": "Sophia Carter",
+      "image": "https://images.pexels.com/photos/874158/pexels-photo-874158.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+  },
+  {
+    "id": 4,
+    "thumbnail_img": "https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "release_date": "09 April, 2024",
+    "title": "Expands Portfolio with Smart Homes",
+    "description": "Expands its portfolio with the introduction of smart homes equipped with cutting-edge technology and automation features. These intelligent residences offer enhanced convenience, security, and energy efficiency, redefining the concept of modern living. Through seamless integration of IoT devices, these properties provide residents with unprecedented control over their living spaces, ensuring a personalized and connected lifestyle experience.",
+    "author": {
+      "name": "David White",
+      "image": "https://images.pexels.com/photos/1043473/pexels-photo-1043473.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+  },
+  {
+    "id": 5,
+    "thumbnail_img": "https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "release_date": "08 April, 2024",
+    "title": "Launches Virtual Property Tours",
+    "description": "Introduces virtual property tours, offering prospective buyers an immersive and interactive way to explore available listings from the comfort of their homes. Through virtual reality technology, users can virtually walk through properties, inspect details, and visualize living spaces with unparalleled realism. This innovative approach to property showcasing enhances accessibility and convenience, empowering buyers to make informed decisions remotely.",
+    "author": {
+      "name": "Laura Miller",
+      "image": "https://images.pexels.com/photos/7595194/pexels-photo-7595194.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+  },
+  {
+    "id": 6,
+    "thumbnail_img": "https://images.pexels.com/photos/1438832/pexels-photo-1438832.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "release_date": "07 April, 2024",
+    "title": "Partners with Renowned Architects for New Projects",
+    "description": "Announces strategic partnerships with renowned architects and design firms to collaborate on upcoming residential projects. By leveraging the expertise and creativity of industry-leading professionals, aims to deliver innovative and iconic developments that redefine urban living. These partnerships underscore commitment to excellence, quality craftsmanship, and architectural innovation in every aspect of its projects.",
+    "author": {
+      "name": "Daniel Taylor",
+      "image": "https://images.pexels.com/photos/7783511/pexels-photo-7783511.jpeg?auto=compress&cs=tinysrgb&w=400"
+    }
+  },
+  {
+    "id": 7,
+    "thumbnail_img": "https://images.pexels.com/photos/2635038/pexels-photo-2635038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "release_date": "06 April, 2024",
+    "title": "Explores Co-living Spaces for Urban Dwellers",
+    "description": "Ventures into the realm of co-living spaces, offering innovative housing solutions tailored to the needs of urban dwellers. With a focus on community, flexibility, and affordability, these initiatives redefine shared living experiences. By fostering a sense of belonging and social connectivity, these spaces cater to the evolving lifestyle preferences of modern city dwellers, creating vibrant and inclusive communities.",
+    "author": {
+      "name": "Sophie Thompson",
+      "image": "https://images.pexels.com/photos/5668774/pexels-photo-5668774.jpeg?auto=compress&cs=tinysrgb&w=400"
+    }
+  },
+  {
+    "id": 8,
+
+    "thumbnail_img": "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "release_date": "05 April, 2024",
+    "title": "Launches Green Spaces Initiative",
+    "description": "Introduces the Green Spaces initiative, dedicated to creating sustainable and eco-friendly communal areas within residential developments. These green spaces, featuring lush gardens, recreational facilities, and eco-conscious design elements, enhance quality of life for residents while promoting environmental stewardship. By prioritizing green infrastructure and nature conservation, reinforces its commitment to fostering healthier, more vibrant communities.",
+    "author": {
+      "name": "Michael Brown",
+      "image": "https://images.pexels.com/photos/5668774/pexels-photo-5668774.jpeg?auto=compress&cs=tinysrgb&w=400"
+    }
+  },
+  {
+    "id": 9,
+    "thumbnail_img": "https://images.pexels.com/photos/1571463/pexels-photo-1571463.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "release_date": "04 April, 2024",
+    "title": "Introduces Eco-Friendly Home Renovation Solutions",
+    "description": "Unveils a range of eco-friendly home renovation solutions designed to enhance sustainability and energy efficiency in existing properties. From energy-efficient appliances to renewable energy systems and eco-conscious building materials, offers comprehensive renovation packages tailored to meet the evolving needs of homeowners. By promoting green renovation practices, empowers homeowners to reduce their environmental footprint while improving comfort and cost savings.",
+    "author": {
+      "name": "Olivia Davis",
+      "image": "https://images.pexels.com/photos/1043473/pexels-photo-1043473.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+  }
+]
