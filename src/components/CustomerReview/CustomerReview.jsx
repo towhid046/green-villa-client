@@ -33,7 +33,12 @@ const CustomerReview = () => {
       sectionDescription={sectionDescription}
       />
 
-      <div className="max-w-5xl mx-auto">
+      <div
+       data-aos-duration="1000"
+       data-aos-delay="400"
+       data-aos-easing="ease-in-out"
+       data-aos='fade-left'
+      className="max-w-5xl mx-auto">
         <Swiper
           spaceBetween={30}
           pagination={{

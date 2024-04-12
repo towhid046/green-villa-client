@@ -5,7 +5,7 @@ import { FaBath } from "react-icons/fa";
 import { FaBed } from "react-icons/fa6";
 import { PiSquaresFourThin } from "react-icons/pi";
 import PropTypes from "prop-types";
-import { scrollToTop } from './../../utility/scrollToTop';
+import { scrollToTop } from "./../../utility/scrollToTop";
 
 const Estate = ({ estate }) => {
   const {
@@ -21,8 +21,16 @@ const Estate = ({ estate }) => {
     price,
   } = estate;
 
+  const animClass = ["fade-right", "fade-right", "zoom-in-up", "fade-left", "fade-right", "zoom-in-up", "fade-left", "fade-right", "zoom-in-up", "fade-left",];
+
   return (
-    <div className="bg-base-100 border rounded-xl justify-between flex flex-col">
+    <div
+      data-aos-duration="1000"
+      data-aos-delay="600"
+      data-aos-easing="ease-in-out"
+      data-aos={animClass[id]}
+      className="bg-base-100 border rounded-xl justify-between flex flex-col"
+    >
       <figure className="relative">
         <img className="rounded-xl" src={image} alt="Shoes" />
         <span
@@ -71,7 +79,7 @@ const Estate = ({ estate }) => {
 
         <div className=" justify-end">
           <Link
-          onClick={scrollToTop}
+            onClick={scrollToTop}
             to={`/estate/${id}`}
             className="btn  w-full bg-[#2B3440] hover:bg-black text-white"
           >

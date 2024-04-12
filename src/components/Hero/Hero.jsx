@@ -25,7 +25,13 @@ const Hero = () => {
     >
       <div className="backdrop-brightness-50 ">
         <div className="flex flex-col lg:flex-row lg:items-start justify-between container mx-auto px-4 md:py-12 py-7 xl:gap-56 lg:gap-40 gap-10 ">
-          <div className=" space-y-6 text-center lg:text-left text-gray-100">
+          <div
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="200"
+            data-aos="fade-right"
+            className="space-y-6 text-center lg:text-left text-gray-100"
+          >
             <h1 className="md:text-5xl max-w-lg text-3xl font-bold bg-gradient-to-r from-blue-200 via-blue-100 to-green-400 inline-block text-transparent bg-clip-text">
               Welcome to <span className="text-green-300">Green</span> Villa:
               Where Serenity Meets Adventure!
@@ -37,12 +43,20 @@ const Hero = () => {
               breathtaking backdrop against the azure sky. Here in Paradise
               Valley, every day is an opportunity for adventure and tranquility.
             </p>
-            <button className="btn btn-outline   text-white text-lg ">
+            <a
+              href="#estates"
+              className="btn btn-outline   text-white text-lg "
+            >
               Explore Now
-            </button>
+            </a>
           </div>
 
-          <div className="relative lg:right-28 text-center">
+          <div
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos="fade-left"
+            className="relative lg:right-28 text-center"
+          >
             <Swiper
               effect={"cards"}
               grabCursor={true}

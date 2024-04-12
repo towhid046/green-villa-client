@@ -70,11 +70,11 @@ const Navbar = () => {
               className="text-base  menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52  gap-3"
             >
               {links}
-              <li>
+              {/* <li>
                 <Link to={"/register"} className="btn btn-info">
                   Sign Up
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
           <Link
@@ -104,7 +104,7 @@ const Navbar = () => {
                     {
                       <Link to={"/user-profile"}>
                         <img
-                          className="md:w-10 w-8 rounded-full"
+                          className="md:w-10 md:h-10 h-8 w-8 rounded-full"
                           src={user?.photoURL}
                           alt="User"
                         />
@@ -120,12 +120,12 @@ const Navbar = () => {
                 </>
               ) : (
                 <>
-                  <Link
+                  {/* <Link
                     to={"/register"}
                     className="btn  hover:bg-green-300  hover:text-white bg-green-300  md:flex hidden"
                   >
                     Sign Up
-                  </Link>
+                  </Link> */}
                   <Link
                     to={"/login"}
                     className="btn hover:bg-black  bg-[#093B59] text-white"

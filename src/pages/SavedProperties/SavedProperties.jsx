@@ -58,7 +58,7 @@ const SavedProperties = () => {
           ) : (
             <div className="h-[80vh] flex justify-center items-center">
               <h2 className="text-gray-400 font-semibold text-3xl">
-                No Property have been saved yet!
+                You haven't saved any property yet!
               </h2>
             </div>
           )}
