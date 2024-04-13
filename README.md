@@ -11,11 +11,11 @@
 + There also two pages namely login and register
 
 ### Packages Use for this Website  
-+ AOS
-+ react-leaflet
-+ swiper
-+ firebase
-+ react-icons
-+ react-toastify
-+ ract-helmet-async
-+ react-router-dom
+- [AOS](https://github.com/michalsnik/aos)
+- [react-leaflet](https://react-leaflet.js.org/)
+- [swiper](https://swiperjs.com/react)
+- [firebase](https://firebase.google.com/)
+- [react-icons](https://react-icons.github.io/react-icons/)
+- [react-toastify](https://fkhadra.github.io/react-toastify/)
+- [react-helmet-async](https://github.com/staylor/react-helmet-async)
+- [react-router-dom](https://reactrouter.com/web/guides/quick-start)
