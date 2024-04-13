@@ -15,7 +15,7 @@ const Footer = () => {
   const contacts = [
     {
       icon: <FiMapPin />,
-      text: "127 Downtown Metropolis, New York",
+      text: "127 Midtown Manhattan, New York",
     },
     { icon: <LuPhone />, text: "+11 23456789123" },
     { icon: <IoMailOutline />, text: "abc123@gmail.com" },

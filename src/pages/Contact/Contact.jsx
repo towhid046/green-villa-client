@@ -6,8 +6,10 @@ import customerSupportImage from "../../../src/assets/images/customer-support.pn
 import { useEffect } from "react";
 import { scrollToTop } from "../../utility/scrollToTop";
 import { Helmet } from "react-helmet-async";
+import MapLeaflet from './../../components/MapLeaflet/MapLeaflet';
 
 const Contact = () => {
+
   useEffect(() => {
     scrollToTop();
   }, []);
@@ -17,21 +19,22 @@ const Contact = () => {
     out. Your feedback and inquiries are important to us, and we're here
     to assist you in any way we can.`;
 
+
   const contacts = [
     { icon: <LuPhone />, text: "+11 23456789123" },
     { icon: <IoMailOutline />, text: "abc123@gmail.com" },
     {
       icon: <FiMapPin />,
-      text: "127 Downtown Metropolis, New York",
+      text: "127 Midtown Manhattan, New York",
     },
   ];
 
   return (
-    <section className="py-12">
+    <section className="py-12 container mx-auto px-4">
       <Helmet>
         <title>Green Villa | Contact</title>
       </Helmet>
-      <div className=" container min-h-[90vh] mx-auto px-4">
+      <div className="min-h-[90vh]">
         <div className="">
           <SectionHeading
             sectionTitle="Get in Touch"
@@ -141,6 +144,12 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
+      <div className="py-12">
+        <h2 className="text-2xl py-6 font-bold text-center"> From Where We Are!</h2>
+      <MapLeaflet/>
+      </div>
+
     </section>
   );
 };
