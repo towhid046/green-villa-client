@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { UserContext } from "../../../providers/ContextProvider/ContextProvider";
 import { toast } from "react-toastify";
+import { scrollToTop } from './../../../utility/scrollToTop';
 
 const Navbar = () => {
   const { user, logOutUser, loading } = useContext(UserContext);
@@ -104,6 +105,7 @@ const Navbar = () => {
                     {
                       <Link to={"/user-profile"}>
                         <img
+                        onClick={scrollToTop}
                           className="md:w-10 md:h-10 h-8 w-8 rounded-full"
                           src={user?.photoURL}
                           alt="User"

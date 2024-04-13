@@ -21,8 +21,18 @@ const Footer = () => {
     { icon: <IoMailOutline />, text: "abc123@gmail.com" },
   ];
 
-  const quickLinks = ["Home", "About", "Blog", "FAQ"];
-  const services = ["Home", "About", "Blog", "FAQ"];
+  const quickLinks = [
+    { name: "Home", url: "/" },
+    { name: "Blog", url: "/news" },
+    { name: "Contact", url: "/contact" },
+    { name: "FAQ", url: "/news" },
+  ];
+  const services = [
+    { name: "Log In", url: "/login" },
+    { name: "Register", url: "/register" },
+    { name: "UserProfile", url: "/user-profile" },
+    { name: "Saved Items", url: "/saved-properties" },
+  ];
 
   return (
     <>
@@ -51,18 +61,18 @@ const Footer = () => {
           <nav>
             <h6 className="footer-title text-lg">Quick Links</h6>
             {quickLinks.map((link, index) => (
-              <a key={index} className="link link-hover">
-                {link}
-              </a>
+              <Link to={link.url} key={index} className="link link-hover">
+                {link.name}
+              </Link>
             ))}
           </nav>
 
           <nav>
             <h6 className="footer-title text-lg">Services</h6>
             {services.map((link, index) => (
-              <a key={index} className="link link-hover">
-                {link}
-              </a>
+              <Link to={link.url} key={index} className="link link-hover">
+                {link.name}
+              </Link>
             ))}
           </nav>
 

@@ -5,7 +5,7 @@ const Photo = ({ photo }) => {
   return (
     <div
     data-aos-duration="1000"
-    data-aos-delay="500"
+    data-aos-delay="400"
     data-aos-easing="ease-in-out"
     data-aos={animClass[id]}
     className="overflow-hidden rounded">

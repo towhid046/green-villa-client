@@ -26,13 +26,13 @@ const Estate = ({ estate }) => {
   return (
     <div
       data-aos-duration="1000"
-      data-aos-delay="600"
+      data-aos-delay="400"
       data-aos-easing="ease-in-out"
       data-aos={animClass[id]}
       className="bg-base-100 border rounded-xl justify-between flex flex-col"
     >
       <figure className="relative">
-        <img className="rounded-xl" src={image} alt="Shoes" />
+      <img className="rounded-xl" src={image} alt="Shoes" />
         <span
           className={`btn btn-sm cursor-text absolute top-3 left-3 ${
             status === "sale"
