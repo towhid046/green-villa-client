@@ -33,7 +33,13 @@ const UpdateProfile = () => {
       </Helmet>
 
       <div className="flex flex-col lg:flex-row justify-between gap-8  border rounded-xl items-start">
-        <div className="w-full lg:w-1/2 rounded-xl bg-base-100  lg:h-full mx-auto md:p-12 py-8 px-6">
+        <div
+          data-aos-duration="1000"
+          data-aos="fade-right"
+          data-aos-delay="600"
+          data-aos-easing="ease-in-out"
+          className="w-full lg:w-1/2 rounded-xl bg-base-100  lg:h-full mx-auto md:p-12 py-8 px-6"
+        >
           {user ? (
             <>
               <h1 className="text-2xl font-bold text-center mb-8">
@@ -94,7 +100,13 @@ const UpdateProfile = () => {
           )}
         </div>
 
-        <div className="lg:h-full w-full lg:w-1/2 flex  items-center flex-col gap-3 p-12">
+        <div
+          data-aos-duration="1000"
+          data-aos="fade-left"
+          data-aos-delay="600"
+          data-aos-easing="ease-in-out"
+          className="lg:h-full w-full lg:w-1/2 flex  items-center flex-col gap-3 p-12"
+        >
           {loading ? (
             <span className="loading loading-dots loading-lg"></span>
           ) : (

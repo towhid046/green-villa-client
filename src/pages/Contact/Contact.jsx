@@ -40,7 +40,13 @@ const Contact = () => {
         </div>
 
         <div className="container flex justify-between bg-white rounded-lg border p-5 gap-8 flex-col lg:flex-row">
-          <div className="lg:w-1/2">
+          <div
+            data-aos-duration="1000"
+            data-aos="fade-right"
+            data-aos-delay="600"
+            data-aos-easing="ease-in-out"
+            className="lg:w-1/2"
+          >
             <div className=" bg-indigo-50 border border-blue-200 rounded-lg p-6">
               <h3 className="text-2xl font-semibold mb-4">
                 Contact Information
@@ -68,7 +74,14 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="lg:w-1/2">
+
+          <div
+            data-aos-duration="1000"
+            data-aos-delay="600"
+            data-aos-easing="ease-in-out"
+            data-aos="fade-left"
+            className="lg:w-1/2"
+          >
             <form className="space-y-3">
               <div className="flex flex-col xl:flex-row items-center gap-4">
                 <div className="w-full">

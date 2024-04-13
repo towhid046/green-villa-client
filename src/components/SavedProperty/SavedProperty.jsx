@@ -22,7 +22,13 @@ const SavedProperty = ({ estate }) => {
     } = estate;
   
     return (
-      <div className="bg-base-100 border rounded-xl flex flex-col lg:flex-row items-center">
+      <div 
+      data-aos-duration="1000"
+      data-aos="fade-left"
+      data-aos-delay="600"
+      data-aos-easing="ease-in-out"
+
+      className="bg-base-100 border rounded-xl flex flex-col lg:flex-row items-center">
         <figure className="relative flex-1 p-4">
           <img className="rounded-xl" src={image} alt="Shoes" />
           <span

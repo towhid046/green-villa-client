@@ -51,7 +51,12 @@ const EstateDetails = () => {
         <Helmet>
           <title>Green Villa | Property Details</title>
         </Helmet>
-        <figure className="relative flex-1">
+        <figure
+        data-aos-duration="1000"
+        data-aos="fade-right"
+        data-aos-delay="600"
+        data-aos-easing="ease-in-out"
+        className="relative flex-1">
           <img className="rounded-sm" src={image} alt="House Image" />
           <span
             className={`btn btn-sm rounded-none cursor-text absolute top-3 left-3 ${
@@ -64,7 +69,12 @@ const EstateDetails = () => {
           </span>
         </figure>
 
-        <div className="bg-base-100 flex-1">
+        <div 
+         data-aos-duration="1000"
+         data-aos="fade-left"
+         data-aos-delay="600"
+         data-aos-easing="ease-in-out"
+        className="bg-base-100 flex-1">
           <div className="space-y-5">
             <div className="">
               <h2 className="md:text-4xl text-3xl font-bold mb-3">

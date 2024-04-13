@@ -5,7 +5,12 @@ const UserProfile = () => {
   const { loading, user } = useContext(UserContext);
 
   return (
-    <section className="container mx-auto px-4">
+    <section 
+    data-aos-duration="1000"
+    data-aos="fade-right"
+    data-aos-delay="600"
+    data-aos-easing="ease-in-out"
+    className="container mx-auto px-4">
       <Helmet>
         <title>Green Villa | User Profile</title>
       </Helmet>

@@ -5,13 +5,11 @@ import { scrollToTop } from "../../utility/scrollToTop";
 import { useEffect } from "react";
 import CustomerReview from "./../../components/CustomerReview/CustomerReview";
 import PhotoGallery from "../../components/PhotoGallery/PhotoGallery";
-import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+
 
 const Home = () => {
   useEffect(() => {
     scrollToTop();
-    AOS.init()
   }, []);
 
 

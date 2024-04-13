@@ -7,9 +7,16 @@ import { scrollToTop } from './../../utility/scrollToTop';
 
 const NewsCard = ({ info='' }) => {
   const { id, thumbnail_img, title, release_date, description, author } = info;
+  const animClass = ["fade-right", "fade-right", "fade-left",  "fade-right", "fade-left", "fade-right", "fade-left", 'fade-right', 'fade-left', 'fade-right', 'fade-left'];
+
 
   return (
-    <div className="bg-base-100 border rounded-xl justify-between flex flex-col">
+    <div 
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-delay="500"
+    data-aos={animClass[id]}
+    className="bg-base-100 border rounded-xl justify-between flex flex-col">
       <figure className="relative overflow-hidden rounded-xl">
         <img
           className="rounded-xl max-h-80 w-full hover:scale-125 ease-in-out transition cursor-pointer"
