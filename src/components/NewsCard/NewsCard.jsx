@@ -4,7 +4,6 @@ import { MdApartment } from "react-icons/md";
 import { CiCalendar } from "react-icons/ci";
 import { Link } from 'react-router-dom';
 import { scrollToTop } from './../../utility/scrollToTop';
-import { useEffect } from "react";
 
 const NewsCard = ({ info='' }) => {
   const { id, thumbnail_img, title, release_date, description, author } = info;

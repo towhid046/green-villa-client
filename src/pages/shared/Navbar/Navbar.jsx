@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { UserContext } from "../../../providers/ContextProvider/ContextProvider";
 import { toast } from "react-toastify";
-import { scrollToTop } from './../../../utility/scrollToTop';
+import { scrollToTop } from "./../../../utility/scrollToTop";
 
 const Navbar = () => {
   const { user, logOutUser, loading } = useContext(UserContext);
@@ -46,7 +46,7 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="bg-base-100 sticky top-0 z-10 py-1 shadow-sm">
+    <nav className="bg-base-100 sticky top-0 z-50 py-1 shadow-sm">
       <div className="navbar container mx-auto px-2">
         <div className="navbar-start">
           <div className="dropdown">
@@ -71,11 +71,6 @@ const Navbar = () => {
               className="text-base  menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52  gap-3"
             >
               {links}
-              {/* <li>
-                <Link to={"/register"} className="btn btn-info">
-                  Sign Up
-                </Link>
-              </li> */}
             </ul>
           </div>
           <Link
@@ -105,7 +100,7 @@ const Navbar = () => {
                     {
                       <Link to={"/user-profile"}>
                         <img
-                        onClick={scrollToTop}
+                          onClick={scrollToTop}
                           className="md:w-10 md:h-10 h-8 w-8 rounded-full"
                           src={user?.photoURL}
                           alt="User"
@@ -121,20 +116,12 @@ const Navbar = () => {
                   </button>
                 </>
               ) : (
-                <>
-                  {/* <Link
-                    to={"/register"}
-                    className="btn  hover:bg-green-300  hover:text-white bg-green-300  md:flex hidden"
-                  >
-                    Sign Up
-                  </Link> */}
-                  <Link
-                    to={"/login"}
-                    className="btn hover:bg-black  bg-[#093B59] text-white"
-                  >
-                    Sign In
-                  </Link>
-                </>
+                <Link
+                  to={"/login"}
+                  className="btn hover:bg-black  bg-[#093B59] text-white"
+                >
+                  Sign In
+                </Link>
               )}
             </>
           )}

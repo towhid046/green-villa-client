@@ -1,14 +1,21 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { UserContext } from "../../providers/ContextProvider/ContextProvider";
+import { scrollToTop } from './../../utility/scrollToTop';
 const UserProfile = () => {
   const { loading, user } = useContext(UserContext);
+
+  useEffect(()=>{
+    scrollToTop()
+  },[])
+
+
 
   return (
     <section 
     data-aos-duration="1000"
     data-aos="fade-right"
-    data-aos-delay="600"
+    data-aos-delay="200"
     data-aos-easing="ease-in-out"
     className="container mx-auto px-4">
       <Helmet>

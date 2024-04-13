@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
 import { UserContext } from "../../providers/ContextProvider/ContextProvider";
 import { scrollToTop } from "./../../utility/scrollToTop";
 import { toast } from "react-toastify";
@@ -90,7 +89,7 @@ const UpdateProfile = () => {
                 </div>
                 <div className="form-control mt-6">
                   <button className="btn w-full rounded-lg hover:bg-black text-white bg-[#2B3440]">
-                    Update
+                    Save Changes
                   </button>
                 </div>
               </form>
@@ -103,7 +102,7 @@ const UpdateProfile = () => {
         <div
           data-aos-duration="1000"
           data-aos="fade-left"
-          data-aos-delay="600"
+          data-aos-delay="300"
           data-aos-easing="ease-in-out"
           className="lg:h-full w-full lg:w-1/2 flex  items-center flex-col gap-3 p-12"
         >
