@@ -1,15 +1,28 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { UserContext } from "./../providers/ContextProvider/ContextProvider";
 import PropTypes from "prop-types";
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
+import { scrollToTop } from "./../utility/scrollToTop";
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useContext(UserContext);
-  if (user || loading) {
+  const location = useLocation();
+  useEffect(() => {
+    scrollToTop();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-[90vh] flex justify-center items-center">
+        <span className=" loading loading-lg loading-dots"></span>
+      </div>
+    );
+  }
+
+  if (user) {
     return children;
   }
-  return <Navigate to="/login"></Navigate>;
-
+  return <Navigate state={location.pathname} to="/login"></Navigate>;
 };
 
 PrivateRoute.propTypes = {

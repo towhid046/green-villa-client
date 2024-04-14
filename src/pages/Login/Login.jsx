@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import googleLogo from "../../../src/assets/logos/google-logo.png";
 import githubLogo from "../../../src/assets/logos/github-logo.png";
 import { Helmet } from "react-helmet-async";
@@ -9,9 +9,13 @@ import { LuEye, LuEyeOff } from "react-icons/lu";
 import { scrollToTop } from "../../utility/scrollToTop";
 
 const Login = () => {
-  const { loginUser, logInWithGoogle, logInWithGithub, setLoading } =
+  const { loginUser, logInWithGoogle, logInWithGithub } =
     useContext(UserContext);
   const [isShowPassword, setIsShowPassword] = useState(false);
+
+  const location = useLocation();
+  const navigate = useNavigate()
+
 
   useEffect(() => {
     scrollToTop();
@@ -30,6 +34,7 @@ const Login = () => {
           theme: "dark",
         });
         e.target.reset();
+        navigate(location?.state ? location.state : '/')
       })
       .catch((err) => {
         console.error(err);
@@ -41,7 +46,6 @@ const Login = () => {
             theme: "dark",
           }
         );
-        setLoading(false);
       });
   };
 
@@ -57,6 +61,7 @@ const Login = () => {
           autoClose: 3000,
           theme: "dark",
         });
+        navigate(location?.state ? location.state : '/')
       })
       .catch((err) => {
         console.error(err);
@@ -71,6 +76,7 @@ const Login = () => {
           autoClose: 3000,
           theme: "dark",
         });
+        navigate(location?.state ? location.state : '/')
       })
       .catch((err) => {
         console.error(err);
