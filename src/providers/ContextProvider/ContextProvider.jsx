@@ -70,6 +70,7 @@ const ContextProvider = ({ children }) => {
     logInWithGithub,
     updateUserProfile,
     loading,
+    setLoading,
   };
 
   return (
