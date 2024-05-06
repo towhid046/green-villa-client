@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { getCurrentItems } from "../../utility/localStorage";
-import Estate from "../../components/Estate/Estate";
 import SectionHeading from "./../shared/SectionHeading/SectionHeading";
 import { scrollToTop } from "./../../utility/scrollToTop";
 import { Helmet } from "react-helmet-async";
@@ -9,6 +8,7 @@ import SavedProperty from "../../components/SavedProperty/SavedProperty";
 
 const SavedProperties = () => {
   const estates = useLoaderData();
+  
   const [savedEstates, setSavedProperties] = useState([]);
   const [loadState, setLoadState] = useState(true);
 

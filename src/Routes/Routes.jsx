@@ -12,6 +12,7 @@ import Contact from "./../pages/Contact/Contact";
 import News from "./../pages/News/News";
 import NewsDetails from "../pages/NewsDetails/NewsDetails";
 import SavedProperties from "./../pages/SavedProperties/SavedProperties";
+import useGetData from "../customHook/useGetData";
 
 const routes = createBrowserRouter([
   {
@@ -21,7 +22,6 @@ const routes = createBrowserRouter([
     children: [
       {
         path: "/",
-        loader: () => fetch("/estates.json"),
         element: <Home />,
       },
 
@@ -42,8 +42,9 @@ const routes = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "/estate/:estateId",
-        loader: () => fetch("/estates.json"),
+        path: "/estates/:id",
+        loader: ({ params }) =>
+          fetch(`${import.meta.env.VITE_URL}/estates/${params.id}`),
         element: (
           <PrivateRoute>
             <EstateDetails />
@@ -60,7 +61,7 @@ const routes = createBrowserRouter([
       },
       {
         path: "/saved-properties",
-        loader: () => fetch("/estates.json"),
+        loader: () => fetch(`${import.meta.env.VITE_URL}/estates`),
         element: (
           <PrivateRoute>
             <SavedProperties />
@@ -69,12 +70,12 @@ const routes = createBrowserRouter([
       },
       {
         path: "/news",
-        loader: () => fetch("/news.json"),
         element: <News />,
       },
       {
-        path: "/news/:newsId",
-        loader: () => fetch("/news.json"),
+        path: "/news/:id",
+        loader: ({ params }) =>
+          fetch(`${import.meta.env.VITE_URL}/news/${params.id}`),
         element: <NewsDetails />,
       },
       {

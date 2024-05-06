@@ -1,10 +1,12 @@
 import Estate from "./../Estate/Estate";
 import SectionHeading from "./../../pages/shared/SectionHeading/SectionHeading";
-import { useLoaderData } from "react-router-dom";
+import useGetData from './../../customHook/useGetData';
 
+const sectionDescription = `Step into the realm of luxury and comfort with our Estates section, where each house card is a gateway to your ideal living space. `;
 const Estates = () => {
-  const estates = useLoaderData();
-  const sectionDescription = `Step into the realm of luxury and comfort with our Estates section, where each house card is a gateway to your ideal living space. `;
+const [estates] = useGetData('/estates')
+
+
 
   return (
     <section id="estates" className="container mx-auto px-4 py-12">

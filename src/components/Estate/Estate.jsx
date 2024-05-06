@@ -9,6 +9,7 @@ import { scrollToTop } from "./../../utility/scrollToTop";
 
 const Estate = ({ estate }) => {
   const {
+    _id,
     image,
     id,
     estate_title,
@@ -79,8 +80,7 @@ const Estate = ({ estate }) => {
 
         <div className=" justify-end">
           <Link
-            onClick={scrollToTop}
-            to={`/estate/${id}`}
+            to={`/estates/${_id}`}
             className="btn  w-full bg-[#2B3440] hover:bg-black text-white"
           >
             View Property

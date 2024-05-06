@@ -8,6 +8,7 @@ import PropTypes from "prop-types";
 
 const SavedProperty = ({ estate }) => {
     const {
+      _id,
       image,
       id,
       estate_title,
@@ -78,7 +79,7 @@ const SavedProperty = ({ estate }) => {
   
           <div className=" justify-end">
             <Link
-              to={`/estate/${id}`}
+              to={`/estates/${_id}`}
               className="btn  w-full bg-[#2B3440] hover:bg-black text-white"
             >
               View Property

@@ -16,8 +16,8 @@ const SectionHeading = ({ sectionTitle = 'Section Title' , sectionDescription = 
 };
 
 SectionHeading.propTypes = {
-    sectionTitle: PropTypes.string.isRequired,
-    sectionDescription: PropTypes.string.isRequired,
+    sectionTitle: PropTypes.string,
+    sectionDescription: PropTypes.string,
 }
 
 export default SectionHeading;

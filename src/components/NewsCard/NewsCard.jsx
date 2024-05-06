@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { scrollToTop } from './../../utility/scrollToTop';
 
 const NewsCard = ({ info='' }) => {
-  const { id, thumbnail_img, title, release_date, description, author } = info;
+  const { _id, id, thumbnail_img, title, release_date, description, author } = info;
   const animClass = ["fade-right", "fade-right", "fade-left",  "fade-right", "fade-left", "fade-right", "fade-left", 'fade-right', 'fade-left', 'fade-right'];
 
 
@@ -50,7 +50,7 @@ const NewsCard = ({ info='' }) => {
             {description?.split(" ").splice(0, 19).join(" ")}{" "}
             <Link 
             onClick={scrollToTop}
-            to={`/news/${id}`} className="text-blue-400 hover:underline cursor-pointer italic">
+            to={`/news/${_id}`} className="text-blue-400 hover:underline cursor-pointer italic">
               Read More
             </Link>
           </p>

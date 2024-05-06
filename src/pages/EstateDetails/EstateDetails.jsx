@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { useParams, useLoaderData } from "react-router-dom";
+import { useEffect } from "react";
+import { useLoaderData } from "react-router-dom";
 import { scrollToTop } from "../../utility/scrollToTop";
 import { LuMapPin } from "react-icons/lu";
 import { IoCarSportSharp } from "react-icons/io5";
@@ -8,18 +8,10 @@ import { FaBed } from "react-icons/fa6";
 import { PiSquaresFourThin } from "react-icons/pi";
 import { IoCheckmarkCircle } from "react-icons/io5";
 import { Helmet } from "react-helmet-async";
-import Estate from "./../../components/Estate/Estate";
 import { saveItemToLS } from "../../utility/localStorage";
 
 const EstateDetails = () => {
-  const estates = useLoaderData();
-  const [estate, setEstate] = useState({});
-  const { estateId } = useParams();
-
-  useEffect(() => {
-    const targetedEstate = estates.find((est) => est.id === Number(estateId));
-    setEstate(targetedEstate);
-  }, [estates]);
+  const estate = useLoaderData();
 
   useEffect(() => {
     scrollToTop();
@@ -141,18 +133,6 @@ const EstateDetails = () => {
               Save Property
             </button>
           </div>
-        </div>
-      </div>
-      <div>
-        <h2 className="text-2xl font-bold pt-16 pb-6">
-          View related properties
-        </h2>
-        <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {estates
-            ?.filter((item) => item.id !== Number(estateId))
-            .map((estate) => (
-              <Estate key={estate.id} estate={estate} />
-            ))}
         </div>
       </div>
     </section>

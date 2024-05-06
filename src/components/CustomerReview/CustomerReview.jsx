@@ -9,21 +9,12 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import { Pagination, Autoplay } from "swiper/modules";
-import { useEffect, useState } from "react";
+import useGetData from './../../customHook/useGetData';
 
 const CustomerReview = () => {
-  const [reviews, setReviews] = useState([]);
+  const [reviews] = useGetData('/reviews');
 
   const sectionDescription = `Discover what our valued customers have to say about their experiences with GreenVilla.`;
-
-  useEffect(() => {
-    const loadData = async () => {
-      const res = await fetch("reviews.json");
-      const data = await res.json();
-      setReviews(data);
-    };
-    loadData();
-  }, []);
 
   return (
     <section className="bg-[#f3f3f3] py-12">
