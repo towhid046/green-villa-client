@@ -17,7 +17,7 @@ const UserProfile = () => {
     data-aos="fade-right"
     data-aos-delay="200"
     data-aos-easing="ease-in-out"
-    className="container mx-auto px-4">
+    className="container mx-auto px-4 min-h-screen">
       <Helmet>
         <title>Green Villa | User Profile</title>
       </Helmet>

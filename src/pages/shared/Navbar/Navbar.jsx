@@ -37,9 +37,9 @@ const Navbar = () => {
           <li>
             <NavLink to="/saved-properties">Saved Properties</NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink to="/update-profile">Update Profile</NavLink>
-          </li>
+          </li> */}
         </>
       )}
     </>
@@ -92,29 +92,42 @@ const Navbar = () => {
           ) : (
             <>
               {user ? (
-                <>
-                  <span
-                    title={user?.displayName}
-                    className="text-3xl cursor-pointer"
+                <div className="dropdown dropdown-hover dropdown-end">
+                  <div
+                    tabIndex={0}
+                    role="button"
+                    className="btn btn-ghost btn-circle avatar"
                   >
-                    {
-                      <Link to={"/user-profile"}>
-                        <img
-                          onClick={scrollToTop}
-                          className="md:w-10 md:h-10 h-8 w-8 rounded-full"
-                          src={user?.photoURL}
-                          alt="User"
-                        />
+                    <div className="w-10 rounded-full">
+                      <img
+                        title={user?.displayName}
+                        src={user?.photoURL}
+                        alt="User"
+                      />
+                    </div>
+                  </div>
+                  <ul
+                    tabIndex={0}
+                    className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                  >
+                    <li>
+                      <Link
+                        onClick={scrollToTop}
+                        to={"/user-profile"}
+                        className="justify-between"
+                      >
+                        Profile
+                        <span className="badge">New</span>
                       </Link>
-                    }
-                  </span>
-                  <button
-                    onClick={handelLogOutUser}
-                    className="btn md:btn md:text-white text-white md:bg-[#093B59] bg-[#093B59] md:hover:bg-black hover:bg-black btn-sm"
-                  >
-                    Log Out
-                  </button>
-                </>
+                    </li>
+                    <li>
+                      <Link to={"/update-profile"}>Update Profile</Link>
+                    </li>
+                    <li>
+                      <button onClick={handelLogOutUser}>Logout</button>
+                    </li>
+                  </ul>
+                </div>
               ) : (
                 <Link
                   to={"/login"}

@@ -19,7 +19,7 @@ const NewsCard = ({ info='' }) => {
     className="bg-base-100 border rounded-xl justify-between flex flex-col">
       <figure className="relative overflow-hidden rounded-xl">
         <img
-          className="rounded-xl max-h-80 w-full hover:scale-125 ease-in-out transition cursor-pointer"
+          className="rounded-xl max-h-80 w-full hover:scale-125 ease-in-out duration-500 transition cursor-pointer"
           src={thumbnail_img}
           alt="News Image"
         />
