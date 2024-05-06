@@ -5,6 +5,8 @@ import { RouterProvider } from "react-router-dom";
 import routes from "./Routes/Routes";
 import { HelmetProvider } from "react-helmet-async";
 import UserContext  from "./providers/ContextProvider/ContextProvider";
+import axios from "axios";
+axios.defaults.withCredentials = true
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

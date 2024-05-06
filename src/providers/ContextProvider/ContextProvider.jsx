@@ -13,6 +13,7 @@ import {
   googleProvider,
 } from "../../firebase/firebase.config";
 import PropTypes from "prop-types";
+import axios from "axios";
 
 export const UserContext = createContext(null);
 
@@ -56,10 +57,18 @@ const ContextProvider = ({ children }) => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
+      // const loggedUser = currentUser?.email;
+      // axios
+      //   .post(`${import.meta.env.VITE_URL}/jwt`, { loggedUser })
+      //   .then((res) => {
+      //     console.log(res.data);
+      //   })
+      //   .catch((err) => {
+      //     console.error(err);
+      //   });
     });
     return () => unSubscribe();
   }, []);
-
 
   const userInfo = {
     createUser,

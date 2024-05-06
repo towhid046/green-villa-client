@@ -35,11 +35,12 @@ const Navbar = () => {
       {user && (
         <>
           <li>
-            <NavLink to="/saved-properties">Saved Properties</NavLink>
+            {/* <NavLink to="/saved-properties">Saved Properties</NavLink> */}
+            <NavLink to="/my-estates">My Estate</NavLink>
           </li>
-          {/* <li>
-            <NavLink to="/update-profile">Update Profile</NavLink>
-          </li> */}
+          <li>
+            <NavLink to="/add-estate">Add Estate</NavLink>
+          </li>
         </>
       )}
     </>

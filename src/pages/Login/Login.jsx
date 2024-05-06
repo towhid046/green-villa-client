@@ -9,7 +9,7 @@ import { LuEye, LuEyeOff } from "react-icons/lu";
 import { scrollToTop } from "../../utility/scrollToTop";
 
 const Login = () => {
-  const { loginUser, logInWithGoogle, logInWithGithub } =
+  const { loginUser, logInWithGoogle, logInWithGithub, setLoading } =
     useContext(UserContext);
   const [isShowPassword, setIsShowPassword] = useState(false);
 
@@ -46,6 +46,7 @@ const Login = () => {
             theme: "dark",
           }
         );
+        setLoading(false)
       });
   };
 

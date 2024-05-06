@@ -22,14 +22,13 @@ const Estate = ({ estate }) => {
     price,
   } = estate;
 
-  const animClass = ["fade-right", "fade-right", "zoom-in-up", "fade-left", "fade-right", "zoom-in-up", "fade-left", "fade-right", "zoom-in-up", "fade-left",];
 
   return (
     <div
       data-aos-duration="1000"
       data-aos-delay="400"
       data-aos-easing="ease-in-out"
-      data-aos={animClass[id]}
+      data-aos='fade-left'
       className="bg-base-100 border rounded-xl justify-between flex flex-col"
     >
       <figure className="relative">

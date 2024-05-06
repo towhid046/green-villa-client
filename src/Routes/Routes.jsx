@@ -13,6 +13,8 @@ import News from "./../pages/News/News";
 import NewsDetails from "../pages/NewsDetails/NewsDetails";
 import SavedProperties from "./../pages/SavedProperties/SavedProperties";
 import useGetData from "../customHook/useGetData";
+import AddEstate from "../pages/AddEstate/AddEstate";
+import MyEstates from "../pages/MyEstates/MyEstates";
 
 const routes = createBrowserRouter([
   {
@@ -79,9 +81,25 @@ const routes = createBrowserRouter([
         element: <NewsDetails />,
       },
       {
-        path: "contact",
+        path: "/contact",
         element: <Contact />,
       },
+      {
+        path: '/add-estate',
+        element: (
+          <PrivateRoute>
+            <AddEstate />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: '/my-estates',
+        element: (
+          <PrivateRoute>
+            <MyEstates/>
+          </PrivateRoute>
+        ),
+      }
     ],
   },
 ]);
