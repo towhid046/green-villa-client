@@ -16,3 +16,7 @@ body{
     color: #97B2EB  !important;
     font-weight: 700;
 }
+.bgGreen{
+    background-color: rgb(44, 143, 224);
+    color: white;
+}

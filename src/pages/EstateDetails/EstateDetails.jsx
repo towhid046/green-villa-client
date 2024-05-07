@@ -49,7 +49,7 @@ const EstateDetails = () => {
         data-aos-delay="600"
         data-aos-easing="ease-in-out"
         className="relative flex-1">
-          <img className="rounded-sm" src={image} alt="House Image" />
+          <img className="rounded-sm w-full" src={image} alt="House Image" />
           <span
             className={`btn btn-sm rounded-none cursor-text absolute top-3 left-3 ${
               status === "sale"
