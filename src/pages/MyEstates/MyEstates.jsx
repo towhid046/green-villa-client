@@ -1,13 +1,27 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../providers/ContextProvider/ContextProvider";
-import useGetData from "../../customHook/useGetData";
 import MyEstate from "./../../components/MyEstate/MyEstate";
+import axios from "axios";
 
 const MyEstates = () => {
   const { user } = useContext(UserContext);
-  const [estates, err, loading] = useGetData(
-    `/user-estates?email=${user?.email}`
-  );
+
+  const [estates, setEstates] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const url = `${import.meta.env.VITE_URL}/user-estates?email=${user?.email}`;
+
+  useEffect(() => {
+    axios
+      .get(url)
+      .then((res) => {
+        setEstates(res.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
+        setLoading(false);
+      });
+  }, [url]);
 
   return (
     <section className="min-h-screen container mx-auto px-4 py-12">

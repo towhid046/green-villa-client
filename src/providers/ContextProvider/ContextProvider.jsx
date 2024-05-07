@@ -57,15 +57,15 @@ const ContextProvider = ({ children }) => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
-      // const loggedUser = currentUser?.email;
-      // axios
-      //   .post(`${import.meta.env.VITE_URL}/jwt`, { loggedUser })
-      //   .then((res) => {
-      //     console.log(res.data);
-      //   })
-      //   .catch((err) => {
-      //     console.error(err);
-      //   });
+      const loggedUser = currentUser?.email;
+      axios
+        .post(`${import.meta.env.VITE_URL}/jwt`, { loggedUser })
+        .then((res) => {
+          console.log(res.data);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
     });
     return () => unSubscribe();
   }, []);
