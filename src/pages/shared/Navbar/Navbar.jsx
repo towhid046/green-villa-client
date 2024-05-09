@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { UserContext } from "../../../providers/ContextProvider/ContextProvider";
 import { toast } from "react-toastify";
 import { scrollToTop } from "./../../../utility/scrollToTop";
+import cartIcon from "../../../assets/logos/cart.svg";
 
 const Navbar = () => {
   const { user, logOutUser, loading } = useContext(UserContext);
@@ -88,6 +89,11 @@ const Navbar = () => {
           <ul className="text-base menu menu-horizontal px-1 gap-3">{links}</ul>
         </div>
         <div className="navbar-end gap-3 mr-2">
+          <div>
+            <Link to={'/my-cart'}>
+              <img title="My Cart" className="w-6" src={cartIcon} alt="" />
+            </Link>
+          </div>
           {loading ? (
             <span className="loading loading-dots loading-md"></span>
           ) : (

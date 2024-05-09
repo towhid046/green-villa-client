@@ -40,6 +40,9 @@ const ContextProvider = ({ children }) => {
   };
 
   const logOutUser = () => {
+    axios(`${import.meta.env.VITE_URL}/logout`)
+    .then(res=> console.log(res.data))
+    .catch(err=> console.log(err))
     setLoading(false);
     return signOut(auth);
   };
@@ -58,14 +61,16 @@ const ContextProvider = ({ children }) => {
       setUser(currentUser);
       setLoading(false);
       const loggedUser = currentUser?.email;
-      axios
-        .post(`${import.meta.env.VITE_URL}/jwt`, { loggedUser })
-        .then((res) => {
-          console.log(res.data);
-        })
-        .catch((err) => {
-          console.error(err);
-        });
+      if (loggedUser) {
+        axios
+          .post(`${import.meta.env.VITE_URL}/jwt`, { loggedUser })
+          .then((res) => {
+            console.log(res.data);
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+      }
     });
     return () => unSubscribe();
   }, []);

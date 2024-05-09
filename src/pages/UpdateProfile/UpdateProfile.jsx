@@ -80,8 +80,7 @@ const UpdateProfile = () => {
                   </label>
                   <input
                     type="email"
-                    name="email"
-                    value={user?.email}
+                    defaultValue={user?.email}
                     placeholder="Enter your email"
                     className="focus:outline-none input w-full rounded-lg outline-none bg-[#f3f3f3]"
                     required

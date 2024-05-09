@@ -1,13 +1,10 @@
-import { Link } from "react-router-dom";
 import { LuMapPin } from "react-icons/lu";
 import { IoCarSportSharp } from "react-icons/io5";
 import { FaBath } from "react-icons/fa";
 import { FaBed } from "react-icons/fa6";
 import { PiSquaresFourThin } from "react-icons/pi";
-import PropTypes from "prop-types";
 
-
-const Estate = ({ estate }) => {
+const Cart = ({ estate }) => {
   const {
     _id,
     image,
@@ -21,18 +18,10 @@ const Estate = ({ estate }) => {
     status,
     price,
   } = estate;
-
-
   return (
-    <div
-      // data-aos-duration="1000"
-      // data-aos-delay="400"
-      // data-aos-easing="ease-in-out"
-      // data-aos='fade-left'
-      className="bg-base-100 border rounded-xl justify-between flex flex-col"
-    >
+    <div className="bg-base-100 border rounded-xl justify-between flex flex-col">
       <figure className="relative">
-      <img className="rounded-xl w-full" src={image} alt="Shoes" />
+        <img className="rounded-xl w-full" src={image} alt="Shoes" />
         <span
           className={`btn btn-sm cursor-text absolute top-3 left-3 ${
             status === "sale"
@@ -78,20 +67,10 @@ const Estate = ({ estate }) => {
         </p>
 
         <div className=" justify-end">
-          <Link
-            to={`/estates/${_id}`}
-            className="btn  w-full bg-[#2B3440] hover:bg-black text-white"
-          >
-            View Property
-          </Link>
         </div>
       </div>
     </div>
   );
 };
 
-Estate.propTypes = {
-  estate: PropTypes.object.isRequired,
-};
-
-export default Estate;
+export default Cart;

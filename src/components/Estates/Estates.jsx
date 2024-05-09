@@ -1,6 +1,5 @@
 import Estate from "./../Estate/Estate";
 import SectionHeading from "./../../pages/shared/SectionHeading/SectionHeading";
-import useGetData from "./../../customHook/useGetData";
 import { useEffect, useState } from "react";
 
 const sectionDescription = `Step into the realm of luxury and comfort with our Estates section, where each house card is a gateway to your ideal living space. `;
@@ -54,14 +53,14 @@ const Estates = () => {
   };
 
   const handlePrevButton = () => {
-    if(currentPage > 0){
-      setCurrentPage(currentPage - 1)
+    if (currentPage > 0) {
+      setCurrentPage(currentPage - 1);
     }
   };
 
   const handleNextButton = () => {
-    if(currentPage < pages.length -1){
-      setCurrentPage(currentPage + 1)
+    if (currentPage < pages.length - 1) {
+      setCurrentPage(currentPage + 1);
     }
   };
   const pagination = pages?.map((page) => (
@@ -74,9 +73,22 @@ const Estates = () => {
       type="radio"
       name="options"
     >
-      {page}
+      {page + 1}
     </li>
   ));
+
+  if (loading) {
+    <div className="text-center py-12">
+      <span className="loading loading-dots loading-lg"></span>
+    </div>;
+  }
+  if (err) {
+    return (
+      <div className="py-12 flex justify-center">
+        <h2 className="text-3xl font-bold  text-gray-300">{err}</h2>
+      </div>
+    );
+  }
 
   return (
     <section id="estates" className="container mx-auto px-4 py-12">
@@ -84,22 +96,12 @@ const Estates = () => {
         sectionTitle="Explore Our Estates: Unveiling Your Dream Home"
         sectionDescription={sectionDescription}
       />
-      {loading ? (
-        <div className="text-center py-12">
-          <span className="loading loading-dots loading-lg"></span>
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-          {estates?.map((estate) => (
-            <Estate key={estate._id} estate={estate} />
-          ))}
-        </div>
-      )}
-      <div className="py-12 flex justify-center">
-        <h2 className="text-3xl font-bold  text-gray-300">{err}</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+        {estates?.map((estate) => (
+          <Estate key={estate._id} estate={estate} />
+        ))}
       </div>
-
-      <div className="flex justify-center gap-5">
+      <div className="flex justify-center gap-5 pt-8">
         <button onClick={handlePrevButton} className="btn btn-primary">
           Prev
         </button>
@@ -110,10 +112,10 @@ const Estates = () => {
 
         <select
           onChange={handleChangeEstatePerPage}
-          className="select select-primary"
+          className="select select-primary focus:outline-none"
         >
           <option value={6}>6</option>
-          <option value={10}>10</option>
+          <option value={9}>9</option>
           <option value={20}>20</option>
         </select>
       </div>

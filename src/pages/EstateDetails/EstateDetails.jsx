@@ -17,11 +17,12 @@ const EstateDetails = () => {
     scrollToTop();
   }, []);
 
-  const handelSaveItemToLS = (propertyId) => {
-    saveItemToLS(propertyId);
+  const handelSaveItemToLS = (id) => {
+    saveItemToLS(id);
   };
 
   const {
+    _id,
     image,
     id,
     estate_title,
@@ -127,7 +128,7 @@ const EstateDetails = () => {
                 ))}
             </ul>
             <button
-              onClick={() => handelSaveItemToLS(id)}
+              onClick={() => handelSaveItemToLS(_id)}
               className="btn w-full rounded-lg hover:bg-black text-white bg-[#2B3440]"
             >
               Save Property

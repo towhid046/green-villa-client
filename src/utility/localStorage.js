@@ -1,4 +1,5 @@
 import { toast } from "react-toastify";
+
 export const getCurrentItems = () => {
   const exisItems = localStorage.getItem("estates");
   return exisItems ? JSON.parse(exisItems) : [];
