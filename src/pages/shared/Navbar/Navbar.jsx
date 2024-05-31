@@ -3,8 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { UserContext } from "../../../providers/ContextProvider/ContextProvider";
 import { toast } from "react-toastify";
 import { scrollToTop } from "./../../../utility/scrollToTop";
-import cartIcon from "../../../assets/logos/cart.svg";
-
+import { CiBookmarkCheck } from "react-icons/ci";
 const Navbar = () => {
   const { user, logOutUser, loading } = useContext(UserContext);
 
@@ -90,8 +89,8 @@ const Navbar = () => {
         </div>
         <div className="navbar-end gap-3 mr-2">
           <div>
-            <Link to={'/my-cart'}>
-              <img title="My Cart" className="w-6" src={cartIcon} alt="" />
+            <Link to={"/my-cart"} title="Saved Property">
+              <CiBookmarkCheck className="text-2xl" />
             </Link>
           </div>
           {loading ? (
