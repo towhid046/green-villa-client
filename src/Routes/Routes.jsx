@@ -15,6 +15,7 @@ import SavedProperties from "./../pages/SavedProperties/SavedProperties";
 import AddEstate from "../pages/AddEstate/AddEstate";
 import MyEstates from "../pages/MyEstates/MyEstates";
 import MyCart from "../pages/MyCart/MyCart";
+import AllEstates from "../pages/AllEstates/AllEstates";
 
 const routes = createBrowserRouter([
   {
@@ -83,6 +84,10 @@ const routes = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/all-estates",
+        element: <AllEstates />,
       },
       {
         path: '/add-estate',
